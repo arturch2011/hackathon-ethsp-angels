@@ -4,28 +4,50 @@ import angelsFactoryContract from '../../../Instances/AngelsFactory';
 import web3 from '../../../Instances/web3';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const Events = () => {
-    const [events, setEventos] = useState([]);
+const Page = () => {
+    const [angels, setAngels] = useState([]);
 
     useEffect(() => {
-        const setEventosHanddler = async () => {
-            const instance = await angelsFactoryContract(web3);
-            const eventos = await instance.methods.getDeployedAngels().call();
-            setEventos(eventos);
+        const getAngelsList = async () => {
+            const instace = await angelsFactoryContract(web3);
+            const angelsList = await instace.methods.getDeployedAngels().call();
+            console.log(angelsList);
+
+            const angelsPromisses = angelsList.map(async (id) => getAngelById(id));
+            const angels = await Promise.all(angelsPromisses);
+            console.log(angels);
+            setAngels(angels);
         };
-        setEventosHanddler();
+
+        getAngelsList();
     }, []);
 
-    console.log(events);
-    const items = events.map((item, index) => {
-        return (
-            <div key={index}>
-                <div className="h-full p-3 bg-blue/25 rounded-xl flex flex-col">Testee + {item}</div>
-            </div>
-        );
-    });
+    const getAngelById = async (id) => {
+        const angelsContractInstance = await angelsContract(web3, id);
+        console.log(typeof id);
+        const name = await angelsContractInstance.methods.name().call();
+        const goal = await angelsContractInstance.methods.goal().call();
+        const deadline = await angelsContractInstance.methods.deadline().call();
+        const minimumContribution = await angelsContractInstance.methods.minimumContribution().call();
+        const amountRaised = await angelsContractInstance.methods.amountRaised().call();
+        const beneficiary = await angelsContractInstance.methods.beneficiary().call();
+        const isGoalReached = await angelsContractInstance.methods.isGoalReached().call();
+        const isClosed = await angelsContractInstance.methods.isClosed().call();
+        const description = await angelsContractInstance.methods.description().call();
+        return {
+            name,
+            goal,
+            deadline,
+            minimumContribution,
+            amountRaised,
+            beneficiary,
+            isGoalReached,
+            isClosed,
+            description,
+        };
+    };
 
     const toggleMenu = () => {
         var menu = document.getElementById('filter-menu');
@@ -102,9 +124,25 @@ const Events = () => {
                     </div>
 
                     <div className="py-4 text-amber">
-                        <div className="flex justify-center py-6 text-6xl font-bold text-center">Events</div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">testee</div>
-                        <div>{items}</div>
+                        <div className="flex justify-center py-6 text-6xl font-bold text-center">Campaing</div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">testee </div>
+                        <div>
+                            {angels.map((angel, index) => (
+                                <div key={index}>
+                                    <div className="h-full p-3 bg-blue/25 rounded-xl flex flex-col">
+                                        <p>{angel.name}</p>
+                                        <p>{angel.goal}</p>
+                                        <p>{angel.deadline}</p>
+                                        <p>{angel.minimumContribution}</p>
+                                        <p>{angel.amountRaised}</p>
+                                        <p>{angel.beneficiary}</p>
+                                        <p>{angel.isGoalReached + ' boolean'}</p>
+                                        <p>{angel.isClosed + ' boolean'}</p>
+                                        <p>{angel.description}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </motion.section>
@@ -112,11 +150,4 @@ const Events = () => {
     );
 };
 
-// export const getServerSideProps = async () => {
-//     const instance = await angelsFactoryContract(web3);
-//     const eventos = await instance.methods.getDeployedAngels().call();
-
-//     return { props: { eventos } };
-// };
-
-export default Events;
+export default Page;
