@@ -24,6 +24,8 @@ const Page = () => {
         getAngelsList();
     }, []);
 
+    //oi
+
     const getAngelById = async (id) => {
         const angelsContractInstance = await angelsContract(web3, id);
         console.log(typeof id);
