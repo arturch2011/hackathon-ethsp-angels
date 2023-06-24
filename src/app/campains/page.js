@@ -22,7 +22,7 @@ const Events = () => {
     const items = events.map((item, index) => {
         return (
             <div key={index}>
-                <div className="h-full p-3 bg-blue/25 rounded-xl flex flex-col">Testee + {item}</div>
+                <div className="h-full p-3 bg-blue/25 rounded-xl flex flex-col">Testees + {item}</div>
             </div>
         );
     });
