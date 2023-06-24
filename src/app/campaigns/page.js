@@ -134,16 +134,10 @@ const Page = () => {
                                 <div key={index}>
                                     <Link href={`/campaigns/${angel.addr}`}>
                                         <div className="h-full p-3 bg-dgold rounded-xl flex flex-col">
-                                            <p>{angel.addr}</p>
-                                            <p>{angel.name}</p>
-                                            <p>{angel.goal}</p>
-                                            <p>{angel.deadline}</p>
-                                            <p>{angel.minimumContribution}</p>
-                                            <p>{angel.amountRaised}</p>
-                                            <p>{angel.beneficiary}</p>
-                                            <p>{angel.isGoalReached + ' boolean'}</p>
-                                            <p>{angel.isClosed + ' boolean'}</p>
-                                            <p>{angel.description}</p>
+                                            <h1 className="font-bold text-4xl mb-4">{angel.name}</h1>
+                                            <h2 className="font-bold text-2xl mb-4">{angel.goal}</h2>
+                                            <p>Deadline: {angel.deadline}</p>
+                                            <p>AmountRaised: {angel.amountRaised}</p>
                                         </div>
                                     </Link>
                                 </div>

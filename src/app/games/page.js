@@ -130,14 +130,10 @@ const Page = () => {
                             {dailyImprovements.map((improvements, index) => (
                                 <div key={index}>
                                     <Link href={`/games/${improvements.addr}`}>
-                                        <div className="h-full p-3 bg-dgold rounded-xl flex flex-col">
-                                            <p>{improvements.addr}</p>
-                                            <p>{improvements.name}</p>
-                                            <p>{improvements.goal}</p>
-                                            <p>{improvements.description}</p>
+                                        <div className="h-full p-3 bg-dgold rounded-xl flex flex-col overflow-hidden">
+                                            <h1 className='font-bold text-4xl mb-4"'>{improvements.name}</h1>
+                                            <h2 className='font-bold text-2xl mb-4"'>{improvements.goal}</h2>
                                             <p>{improvements.creator}</p>
-
-                                            <p>{improvements.isClosed + ' boolean'}</p>
                                         </div>
                                     </Link>
                                 </div>
