@@ -76,18 +76,34 @@ const Navbar = () => {
                                 <Link href="/" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
                                     Home
                                 </Link>
-                                <Link
-                                    href="/games"
-                                    className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
-                                >
-                                    Campains
-                                </Link>
                                 <div
                                     onClick={() => handleDropClick('drop1')}
                                     className="hover:bg-gray-700 px-3 py-2 flex flex-row justify-center rounded-md text-sm font-medium"
                                 >
-                                    Create
+                                    Participate
                                     {showDrop.drop1 && (
+                                        <div className="absolute flex flex-col items-center rounded-lg mt-12 p-4 bg-slate-700/50 backdrop-blur-xl">
+                                            <Link
+                                                href="/games"
+                                                className="p-2 hover:bg-gray-700 w-full rounded-lg text-center"
+                                            >
+                                                Games
+                                            </Link>
+                                            <Link
+                                                href="/campaigns"
+                                                className="p-2 hover:bg-gray-700 w-full rounded-lg text-center"
+                                            >
+                                                Campaigns
+                                            </Link>
+                                        </div>
+                                    )}
+                                </div>
+                                <div
+                                    onClick={() => handleDropClick('drop2')}
+                                    className="hover:bg-gray-700 px-3 py-2 flex flex-row justify-center rounded-md text-sm font-medium"
+                                >
+                                    Create
+                                    {showDrop.drop2 && (
                                         <div className="absolute flex flex-col items-center rounded-lg mt-12 p-4 bg-slate-700/50 backdrop-blur-xl">
                                             <Link
                                                 href="/createc"
