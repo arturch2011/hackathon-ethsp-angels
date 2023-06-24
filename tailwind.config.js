@@ -18,6 +18,7 @@ module.exports = {
                 blue: '#89CFF0',
                 cblue: '#B8E2F2',
                 gold: '#EDC967',
+                purple: '#C026D3',
                 background: '#191B1F',
             },
         },
