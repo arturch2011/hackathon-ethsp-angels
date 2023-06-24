@@ -30,24 +30,21 @@ const Page = () => {
         console.log(typeof id);
         const name = await dailyImprovementsInstance.methods.name().call();
         const goal = await dailyImprovementsInstance.methods.goal().call();
-        const deadline = await dailyImprovementsInstance.methods.deadline().call();
-        const minimumContribution = await dailyImprovementsInstance.methods.minimumContribution().call();
-        const amountRaised = await dailyImprovementsInstance.methods.amountRaised().call();
-        const beneficiary = await dailyImprovementsInstance.methods.beneficiary().call();
-        const isGoalReached = await dailyImprovementsInstance.methods.isGoalReached().call();
-        const isClosed = await dailyImprovementsInstance.methods.isClosed().call();
         const description = await dailyImprovementsInstance.methods.description().call();
+        const creator = await dailyImprovementsInstance.methods.creator().call();
+        // const participants = await dailyImprovementsInstance.methods.participants().call();
+        //const validators = await dailyImprovementsInstance.methods.validators().call();
+        const isClosed = await dailyImprovementsInstance.methods.isClosed().call();
+
         return {
             addr,
             name,
             goal,
-            deadline,
-            minimumContribution,
-            amountRaised,
-            beneficiary,
-            isGoalReached,
-            isClosed,
             description,
+            creator,
+            // participants,
+            // validators,
+            isClosed,
         };
     };
 
@@ -130,20 +127,17 @@ const Page = () => {
                             Daily Improvements
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                            {dailyImprovements.map((angel, index) => (
+                            {dailyImprovements.map((improvements, index) => (
                                 <div key={index}>
-                                    <Link href={`/games/${angel.addr}`}>
+                                    <Link href={`/games/${improvements.addr}`}>
                                         <div className="h-full p-3 bg-dgold rounded-xl flex flex-col">
-                                            <p>{angel.addr}</p>
-                                            <p>{angel.name}</p>
-                                            <p>{angel.goal}</p>
-                                            <p>{angel.deadline}</p>
-                                            <p>{angel.minimumContribution}</p>
-                                            <p>{angel.amountRaised}</p>
-                                            <p>{angel.beneficiary}</p>
-                                            <p>{angel.isGoalReached + ' boolean'}</p>
-                                            <p>{angel.isClosed + ' boolean'}</p>
-                                            <p>{angel.description}</p>
+                                            <p>{improvements.addr}</p>
+                                            <p>{improvements.name}</p>
+                                            <p>{improvements.goal}</p>
+                                            <p>{improvements.description}</p>
+                                            <p>{improvements.creator}</p>
+
+                                            <p>{improvements.isClosed + ' boolean'}</p>
                                         </div>
                                     </Link>
                                 </div>
