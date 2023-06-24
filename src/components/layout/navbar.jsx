@@ -87,7 +87,7 @@ const Navbar = () => {
                                                 href="/games"
                                                 className="p-2 hover:bg-gray-700 w-full rounded-lg text-center"
                                             >
-                                                Games
+                                                GoalGames
                                             </Link>
                                             <Link
                                                 href="/campaigns"

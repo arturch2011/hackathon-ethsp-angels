@@ -126,12 +126,13 @@ const Page = () => {
                     </div>
 
                     <div className="py-4 text-amber">
-                        <div className="flex justify-center py-6 text-6xl font-bold text-center">Campaing</div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">testee </div>
-                        <div>
+                        <div className="flex justify-center py-6 text-6xl font-bold text-center text-purple">
+                            Campaing
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                             {angels.map((angel, index) => (
                                 <div key={index}>
-                                    <div className="h-full p-3 bg-blue/25 rounded-xl flex flex-col">
+                                    <div className="h-full p-3 bg-dgold rounded-xl flex flex-col">
                                         <p>{angel.addr}</p>
                                         <p>{angel.name}</p>
                                         <p>{angel.goal}</p>
@@ -146,6 +147,7 @@ const Page = () => {
                                 </div>
                             ))}
                         </div>
+                        <div></div>
                     </div>
                 </div>
             </motion.section>
