@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import web3 from '../../../Instances/web3';
-import angelsFactoryContract from '../../../Instances/AngelsFactory';
+import dailyImprovementsFactoryContract from '../../../Instances/DailyImprovementsFactory';
 
 const Create = () => {
     const containerVariants = {
@@ -23,14 +23,14 @@ const Create = () => {
 
     const [name, setName] = useState('');
     const [goal, setGoal] = useState('');
-    const [deadline, setDeadline] = useState('');
-    const [minimum, setMinimum] = useState('');
     const [description, setDescription] = useState('');
 
     const createCampaignHanddler = async () => {
         const accounts = await web3.eth.getAccounts();
-        const angelsFactory = angelsFactoryContract(web3);
-        await angelsFactory.methods.createAngel(name, goal, deadline, minimum, description).send({ from: accounts[0] });
+        const dailyImprovementsFactory = dailyImprovementsFactoryContract(web3);
+        await dailyImprovementsFactory.methods
+            .createDailyImprovements(name, goal, description)
+            .send({ from: accounts[0] });
     };
 
     return (
@@ -56,7 +56,7 @@ const Create = () => {
                             <input
                                 type="text"
                                 id="name"
-                                placeholder="Campaign Name"
+                                placeholder="GoalGame Name"
                                 className="w-full border-gray-300 rounded-md p-3 text-black placeholder:italic"
                                 onChange={(e) => setName(e.target.value)}
                             />
@@ -68,33 +68,9 @@ const Create = () => {
                             <input
                                 type="goal"
                                 id="goal"
-                                placeholder="Amount To Be Collected"
+                                placeholder="Main objective of the GoalGame"
                                 className="w-full border-gray-300 rounded-md p-3 text-black placeholder:italic"
                                 onChange={(e) => setGoal(e.target.value)}
-                            />
-                        </div>
-                        <div className="mb-6">
-                            <label htmlFor="deadline" className="block text-xl font-medium mb-2">
-                                Deadline
-                            </label>
-                            <input
-                                type="deadline"
-                                id="deadline"
-                                placeholder="Days"
-                                className="w-full border-gray-300 rounded-md p-3 text-black placeholder:italic"
-                                onChange={(e) => setDeadline(e.target.value)}
-                            />
-                        </div>
-                        <div className="mb-6">
-                            <label htmlFor="minimum" className="block text-xl font-medium mb-2">
-                                Minimum Contribution
-                            </label>
-                            <input
-                                type="minimum"
-                                id="minimum"
-                                placeholder="Minimum Donation Amount"
-                                className="w-full border-gray-300 rounded-md p-3 text-black placeholder:italic"
-                                onChange={(e) => setMinimum(e.target.value)}
                             />
                         </div>
                         <div className="mb-6">
@@ -103,7 +79,7 @@ const Create = () => {
                             </label>
                             <textarea
                                 id="description"
-                                placeholder="Campaign Description"
+                                placeholder="GoalGame Description"
                                 rows={5}
                                 className="w-full border-gray-300 rounded-md p-3 text-black placeholder:italic"
                                 onChange={(e) => setDescription(e.target.value)}

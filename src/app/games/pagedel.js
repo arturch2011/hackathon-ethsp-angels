@@ -1,24 +1,24 @@
 'use client';
-import dailyImprovementsContract from '../../../Instances/DailyImprovements';
-import dailyImprovementsFactoryContract from '../../../Instances/DailyImprovementsFactory';
+import angelsContract from '../../../Instances/Angels';
+import angelsFactoryContract from '../../../Instances/AngelsFactory';
 import web3 from '../../../Instances/web3';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 const Page = () => {
-    const [dailyImprovements, setDailyImprovements] = useState([]);
+    const [angels, setAngels] = useState([]);
 
     useEffect(() => {
         const getAngelsList = async () => {
-            const instace = await dailyImprovementsFactoryContract(web3);
-            const dailyImprovementsList = await instace.methods.getDeployedDailyImprovements().call();
-            console.log(dailyImprovementsList);
+            const instace = await angelsFactoryContract(web3);
+            const angelsList = await instace.methods.getDeployedAngels().call();
+            console.log(angelsList);
 
-            const dailyImprovementsPromisses = dailyImprovementsList.map(async (id) => getAngelById(id));
-            const dailyImprovements = await Promise.all(dailyImprovementsPromisses);
-            console.log(dailyImprovements);
-            setDailyImprovements(dailyImprovements);
+            const angelsPromisses = angelsList.map(async (id) => getAngelById(id));
+            const angels = await Promise.all(angelsPromisses);
+            console.log(angels);
+            setAngels(angels);
         };
 
         getAngelsList();
@@ -26,17 +26,17 @@ const Page = () => {
 
     const getAngelById = async (id) => {
         const addr = id;
-        const dailyImprovementsInstance = await dailyImprovementsContract(web3, id);
+        const angelsContractInstance = await angelsContract(web3, id);
         console.log(typeof id);
-        const name = await dailyImprovementsInstance.methods.name().call();
-        const goal = await dailyImprovementsInstance.methods.goal().call();
-        const deadline = await dailyImprovementsInstance.methods.deadline().call();
-        const minimumContribution = await dailyImprovementsInstance.methods.minimumContribution().call();
-        const amountRaised = await dailyImprovementsInstance.methods.amountRaised().call();
-        const beneficiary = await dailyImprovementsInstance.methods.beneficiary().call();
-        const isGoalReached = await dailyImprovementsInstance.methods.isGoalReached().call();
-        const isClosed = await dailyImprovementsInstance.methods.isClosed().call();
-        const description = await dailyImprovementsInstance.methods.description().call();
+        const name = await angelsContractInstance.methods.name().call();
+        const goal = await angelsContractInstance.methods.goal().call();
+        const deadline = await angelsContractInstance.methods.deadline().call();
+        const minimumContribution = await angelsContractInstance.methods.minimumContribution().call();
+        const amountRaised = await angelsContractInstance.methods.amountRaised().call();
+        const beneficiary = await angelsContractInstance.methods.beneficiary().call();
+        const isGoalReached = await angelsContractInstance.methods.isGoalReached().call();
+        const isClosed = await angelsContractInstance.methods.isClosed().call();
+        const description = await angelsContractInstance.methods.description().call();
         return {
             addr,
             name,
@@ -126,12 +126,9 @@ const Page = () => {
                     </div>
 
                     <div className="py-4 text-amber">
-                        <div className="flex justify-center py-6 text-6xl font-bold text-center">
-                            Daily Improvements
-                        </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">testee </div>
-                        <div>
-                            {dailyImprovements.map((angel, index) => (
+                        <div className="flex justify-center py-6 text-6xl font-bold text-center">Games</div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                            {angels.map((angel, index) => (
                                 <div key={index}>
                                     <div className="h-full p-3 bg-blue/25 rounded-xl flex flex-col">
                                         <p>{angel.addr}</p>

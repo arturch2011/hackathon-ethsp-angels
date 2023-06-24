@@ -1,4 +1,6 @@
 'use client';
+import angelsContract from '../../../Instances/Angels';
+import angelsFactoryContract from '../../../Instances/AngelsFactory';
 import dailyImprovementsContract from '../../../Instances/DailyImprovements';
 import dailyImprovementsFactoryContract from '../../../Instances/DailyImprovementsFactory';
 import web3 from '../../../Instances/web3';
@@ -126,9 +128,7 @@ const Page = () => {
                     </div>
 
                     <div className="py-4 text-amber">
-                        <div className="flex justify-center py-6 text-6xl font-bold text-center">
-                            Daily Improvements
-                        </div>
+                        <div className="flex justify-center py-6 text-6xl font-bold text-center">Campaing</div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">testee </div>
                         <div>
                             {dailyImprovements.map((angel, index) => (
