@@ -24,6 +24,7 @@ const Page = () => {
         getAngelsList();
     }, []);
 
+<<<<<<< HEAD
     const getAngelById = async (id) => {
         const angelsContractInstance = await angelsContract(web3, id);
         console.log(typeof id);
@@ -48,6 +49,16 @@ const Page = () => {
             description,
         };
     };
+=======
+    console.log(events);
+    const items = events.map((item, index) => {
+        return (
+            <div key={index}>
+                <div className="h-full p-3 bg-blue/25 rounded-xl flex flex-col">Testees + {item}</div>
+            </div>
+        );
+    });
+>>>>>>> eff13f27a5a1ea208be59c19dcad02e2d7993575
 
     const toggleMenu = () => {
         var menu = document.getElementById('filter-menu');
