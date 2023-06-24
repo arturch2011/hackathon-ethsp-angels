@@ -25,6 +25,7 @@ const Page = () => {
     }, []);
 
     const getAngelById = async (id) => {
+        const addr = id;
         const angelsContractInstance = await angelsContract(web3, id);
         console.log(typeof id);
         const name = await angelsContractInstance.methods.name().call();
@@ -37,6 +38,7 @@ const Page = () => {
         const isClosed = await angelsContractInstance.methods.isClosed().call();
         const description = await angelsContractInstance.methods.description().call();
         return {
+            addr,
             name,
             goal,
             deadline,
@@ -130,6 +132,7 @@ const Page = () => {
                             {angels.map((angel, index) => (
                                 <div key={index}>
                                     <div className="h-full p-3 bg-blue/25 rounded-xl flex flex-col">
+                                        <p>{angel.addr}</p>
                                         <p>{angel.name}</p>
                                         <p>{angel.goal}</p>
                                         <p>{angel.deadline}</p>
