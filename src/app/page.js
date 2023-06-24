@@ -2,6 +2,7 @@ import HeroSection from '@/components/hero';
 import About from '@/components/about';
 import Expandable from '@/components/expandable';
 import Join from '@/components/join';
+import Blocks from '@/components/blocks';
 
 export default function Home() {
     return (
@@ -10,6 +11,7 @@ export default function Home() {
                 <HeroSection />
 
                 <section className="w-full pb-20 backdrop-blur-xl bg-gradient-to-b from-blue to-slate-700/50">
+                    <Blocks />
                     <About />
                     <Expandable />
                     <Join />

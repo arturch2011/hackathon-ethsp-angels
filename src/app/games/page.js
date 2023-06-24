@@ -24,7 +24,6 @@ const Page = () => {
         getAngelsList();
     }, []);
 
-<<<<<<< HEAD
     const getAngelById = async (id) => {
         const angelsContractInstance = await angelsContract(web3, id);
         console.log(typeof id);
@@ -49,16 +48,6 @@ const Page = () => {
             description,
         };
     };
-=======
-    console.log(events);
-    const items = events.map((item, index) => {
-        return (
-            <div key={index}>
-                <div className="h-full p-3 bg-blue/25 rounded-xl flex flex-col">Testees + {item}</div>
-            </div>
-        );
-    });
->>>>>>> eff13f27a5a1ea208be59c19dcad02e2d7993575
 
     const toggleMenu = () => {
         var menu = document.getElementById('filter-menu');
@@ -72,13 +61,13 @@ const Page = () => {
     return (
         <>
             <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="min-h-screen py-20 bg-dblue">
-                <div className="w-full max-w-screen-2xl mx-auto px-4 sm:px-8 lg:px-16">
+                <div className="w-full py-28 max-w-screen-2xl mx-auto px-4 sm:px-8 lg:px-16">
                     <div className="flex items-center justify-between text-amber">
                         <div>
                             <button
                                 type="button"
                                 onClick={toggleMenu}
-                                className="inline-flex justify-center items-center px-4 py-2 text-sm font-medium bg-amber text-dblue rounded-lg hover:bg-amber/50 hover:text-amber active:bg-amber active:text-dblue"
+                                className="inline-flex justify-center items-center px-4 py-2 text-sm font-medium bg-dgold text-dblue rounded-lg hover:bg-amber/50 hover:text-amber active:bg-amber active:text-dblue"
                                 id="filter-menu-button"
                                 aria-expanded="false"
                                 aria-haspopup="true"
@@ -113,10 +102,10 @@ const Page = () => {
 
                         <div className="relative flex items-center">
                             <input
-                                className="pl-4 pr-12 py-2 rounded-full bg-white/25 focus:border-amber focus:border-2 focus:outline-none"
+                                className="pl-4 pr-12 py-2 rounded-full bg-white/25 focus:border-dgold focus:border-2 focus:outline-none"
                                 placeholder="Search"
                             />
-                            <button className="absolute right-0 top-0 h-full p-2 rounded-r-full bg-amber text-dblue hover:bg-amber/50 hover:text-amber active:bg-amber active:text-dblue">
+                            <button className="absolute right-0 top-0 h-full p-2 rounded-r-full bg-dgold text-dblue hover:bg-amber/50 hover:text-amber active:bg-amber active:text-dblue">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"

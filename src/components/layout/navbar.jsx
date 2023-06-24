@@ -77,7 +77,7 @@ const Navbar = () => {
                                     Home
                                 </Link>
                                 <Link
-                                    href="/campains"
+                                    href="/games"
                                     className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
                                 >
                                     Campains
