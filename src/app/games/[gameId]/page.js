@@ -24,12 +24,18 @@ const GameID = ({ params }) => {
 
     useEffect(() => {
         const getGameProps = async () => {
+            const callerAddr = await web3.eth.getAccounts();
             const dailyImprovementsInstance = await dailyImprovementsContract(web3, addr);
             const name = await dailyImprovementsInstance.methods.name().call();
             const goal = await dailyImprovementsInstance.methods.goal().call();
             const description = await dailyImprovementsInstance.methods.description().call();
             const creator = await dailyImprovementsInstance.methods.creator().call();
             const isClosed = await dailyImprovementsInstance.methods.isClosed().call();
+            const totalValue = await dailyImprovementsInstance.methods.totalValue().call();
+            const myProgress = await dailyImprovementsInstance.methods.myProgress().call({ from: callerAddr[0] });
+            const start = await dailyImprovementsInstance.methods.inicio().call();
+            const end = await dailyImprovementsInstance.methods.fim().call();
+            const category = await dailyImprovementsInstance.methods.category().call();
 
             const gameProps = {
                 addr,
@@ -40,6 +46,12 @@ const GameID = ({ params }) => {
                 // participants,
                 // validators,
                 isClosed,
+                totalValue,
+                myProgress,
+                start,
+                end,
+                category,
+                callerAddr,
             };
             console.log(gameProps);
 
@@ -85,7 +97,26 @@ const GameID = ({ params }) => {
 
                     <p className="text-lg text-gray-700 mb-6">{gameProps.description}</p>
 
+                    <div>
+                        <h2>Propsss</h2>
+                        <p>Addr: {gameProps.addr}</p>
+                        <p>Name: {gameProps.name}</p>
+                        <p>Goal: {gameProps.goal}</p>
+                        <p>Description: {gameProps.description}</p>
+                        <p>Creator: {gameProps.creator}</p>
+                        <p>Is closed: {gameProps.isClosed + ''}</p>
+                        <p>Total Value: {gameProps.totalValue + ''}</p>
+                        <p>My Progress: {gameProps.myProgress + ''}</p>
+                        <p>Start Date: {gameProps.start + ''}</p>
+                        <p>End Date: {gameProps.end + ''}</p>
+                        <p>Category: {gameProps.category + ''}</p>
+                        <p>Caller Addr: {gameProps.callerAddr + ''}</p>
+                    </div>
+
                     <button className="bg-dgold text-white py-2 px-6 rounded-lg shadow-lg">Participate</button>
+                    <button className="bg-dgold text-white py-2 px-6 rounded-lg shadow-lg">Finalize Game</button>
+                    <button className="bg-dgold text-white py-2 px-6 rounded-lg shadow-lg">Validade Daily Goal</button>
+                    <button className="bg-dgold text-white py-2 px-6 rounded-lg shadow-lg">Validade Daily Goal</button>
                 </div>
             </motion.section>
         </>
