@@ -33,7 +33,7 @@ const Create = () => {
         const accounts = await web3.eth.getAccounts();
         const dailyImprovementsFactory = dailyImprovementsFactoryContract(web3);
         await dailyImprovementsFactory.methods
-            .createDailyImprovements(name, goal, description, start, end, category, validator)
+            .createDailyImprovements(name, goal, description, start, end, validator, category)
             .send({ from: accounts[0] });
     };
 
