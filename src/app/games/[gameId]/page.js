@@ -28,6 +28,10 @@ const GameID = ({ params }) => {
             const name = await dailyImprovementsInstance.methods.name().call();
             const goal = await dailyImprovementsInstance.methods.goal().call();
             const description = await dailyImprovementsInstance.methods.description().call();
+            const start = await dailyImprovementsInstance.methods.start().call();
+            const end = await dailyImprovementsInstance.methods.end().call();
+            const category = await dailyImprovementsInstance.methods.category().call();
+            const validator = await dailyImprovementsInstance.methods.validator().call();
             const creator = await dailyImprovementsInstance.methods.creator().call();
             const isClosed = await dailyImprovementsInstance.methods.isClosed().call();
 
@@ -36,12 +40,16 @@ const GameID = ({ params }) => {
                 name,
                 goal,
                 description,
+                start,
+                end,
+                category,
+                validator,
                 creator,
                 // participants,
                 // validators,
                 isClosed,
             };
-            console.log(gameProps);
+            console.log(gameProps.category);
 
             setGameProps(gameProps);
         };
@@ -57,35 +65,39 @@ const GameID = ({ params }) => {
                 transition={{ duration: 0.8 }}
                 className="min-h-screen w-full bg-dblue py-28 flex items-center"
             >
-                <div className="max-w-7xl mx-auto">
-                    <h2 className="text-4xl font-bold text-gray-800 mb-4">{gameProps.name}</h2>
-                    <p className="text-lg text-gray-600 mb-6">{gameProps.goal}</p>
+                <div className="max-w-7xl mx-auto w-full flex">
+                    <div className="w-1/2 bg-cblue p-6 rounded-xl mr-4">
+                        <h2 className="text-4xl font-bold text-gray-800 mb-4">{gameProps.name}</h2>
+                        <p className="text-lg text-gray-600 mb-6">{gameProps.goal}</p>
 
-                    <div className="flex justify-between items-center mb-6">
-                        <div>
-                            <p className="text-sm text-gray-500">Start date:</p>
-                            <p className="text-lg font-semibold text-gray-800">{startDate.toLocaleDateString()}</p>
+                        <div className="flex justify-between items-center mb-6">
+                            <div>
+                                <p className="text-sm text-gray-500">Start date:</p>
+                                <p className="text-lg font-semibold text-gray-800">{startDate.toLocaleDateString()}</p>
+                            </div>
+                            <div>
+                                <p className="text-sm text-gray-500">End Date:</p>
+                                <p className="text-lg font-semibold text-gray-800">{endDate.toLocaleDateString()}</p>
+                            </div>
+                            <div>
+                                <p className="text-sm text-gray-500">Donate category:</p>
+                                <p className="text-lg font-semibold text-gray-800">{gameProps.category}</p>
+                            </div>
                         </div>
-                        <div>
-                            <p className="text-sm text-gray-500">End Date:</p>
-                            <p className="text-lg font-semibold text-gray-800">{endDate.toLocaleDateString()}</p>
+
+                        <div className="flex items-center mb-6">
+                            <div className="w-10/12 bg-gray-200 h-4 rounded-full">
+                                <div className="bg-purple h-4 rounded-full" style={{ width: `${progress}%` }}></div>
+                            </div>
+                            <p className="ml-4 text-gray-700">{`${progress}% done`}</p>
                         </div>
-                        <div>
-                            <p className="text-sm text-gray-500">Donate category:</p>
-                            <p className="text-lg font-semibold text-gray-800">Categoria do produto</p>
-                        </div>
+
+                        <button className="bg-dgold text-white py-2 px-6 rounded-lg shadow-lg">Participate</button>
                     </div>
-
-                    <div className="flex items-center mb-6">
-                        <div className="w-10/12 bg-gray-200 h-4 rounded-full">
-                            <div className="bg-purple h-4 rounded-full" style={{ width: `${progress}%` }}></div>
-                        </div>
-                        <p className="ml-4 text-gray-700">{`${progress}% done`}</p>
+                    <div className="w-1/2 ml-4">
+                        <h2 className="text-4xl font-bold text-gray-800 mb-4">Description</h2>
+                        <p className="text-lg text-gray-700 mb- overflow-hidden">{gameProps.description}</p>
                     </div>
-
-                    <p className="text-lg text-gray-700 mb-6">{gameProps.description}</p>
-
-                    <button className="bg-dgold text-white py-2 px-6 rounded-lg shadow-lg">Participate</button>
                 </div>
             </motion.section>
         </>

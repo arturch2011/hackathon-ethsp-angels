@@ -70,17 +70,17 @@ const Navbar = () => {
             <div className="max-w-7xl w-full px-4 sm:px-6 lg:px-8 bg-gray-700 md:bg-gray-700/25 md:backdrop-blur-xl md:rounded-full md:mx-4">
                 <div className="flex items-center justify-between h-16">
                     <div className="w-full flex items-center justify-between">
-                        <div className="flex-shrink-0">ANGELS</div>
+                        <div className="flex-shrink-0">GOalGame</div>
                         <div className="hidden md:block">
                             <div className="ml-10 flex items-baseline space-x-4">
-                                <Link href="/" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
-                                    Home
+                                <Link href="/" className="hover:bg-gray-700 px-3 py-2 rounded-md ">
+                                    Início
                                 </Link>
                                 <div
                                     onClick={() => handleDropClick('drop1')}
-                                    className="hover:bg-gray-700 px-3 py-2 flex flex-row justify-center rounded-md text-sm font-medium"
+                                    className="hover:bg-gray-700 px-3 py-2 flex flex-row justify-center rounded-md"
                                 >
-                                    Participate
+                                    Participar
                                     {showDrop.drop1 && (
                                         <div className="absolute flex flex-col items-center rounded-lg mt-12 p-4 bg-slate-700/50 backdrop-blur-xl">
                                             <Link
@@ -93,38 +93,35 @@ const Navbar = () => {
                                                 href="/campaigns"
                                                 className="p-2 hover:bg-gray-700 w-full rounded-lg text-center"
                                             >
-                                                Campaigns
+                                                Campanhas
                                             </Link>
                                         </div>
                                     )}
                                 </div>
                                 <div
                                     onClick={() => handleDropClick('drop2')}
-                                    className="hover:bg-gray-700 px-3 py-2 flex flex-row justify-center rounded-md text-sm font-medium"
+                                    className="hover:bg-gray-700 px-3 py-2 flex flex-row justify-center rounded-md"
                                 >
-                                    Create
+                                    Criar
                                     {showDrop.drop2 && (
                                         <div className="absolute flex flex-col items-center rounded-lg mt-12 p-4 bg-slate-700/50 backdrop-blur-xl">
                                             <Link
                                                 href="/createc"
                                                 className="p-2 hover:bg-gray-700 w-full rounded-lg text-center"
                                             >
-                                                Create Campaign
+                                                Criar Campanha
                                             </Link>
                                             <Link
                                                 href="/createm"
                                                 className="p-2 hover:bg-gray-700 w-full rounded-lg text-center"
                                             >
-                                                Create GoalGame
+                                                Criar GoalGame
                                             </Link>
                                         </div>
                                     )}
                                 </div>
-                                <Link
-                                    href="/benefits"
-                                    className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
-                                >
-                                    Benefits
+                                <Link href="/benefits" className="hover:bg-gray-700 px-3 py-2 rounded-md">
+                                    Beneficios
                                 </Link>
                                 <WalletButton />
                             </div>
@@ -174,25 +171,25 @@ const Navbar = () => {
                             href="/"
                             className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                         >
-                            Home
+                            Início
                         </Link>
                         <Link
                             href="/campains"
                             className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                         >
-                            Campains
+                            Participar
                         </Link>
                         <Link
                             href="/create"
                             className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                         >
-                            Create Campaign
+                            Criar
                         </Link>
                         <Link
                             href="/benefits"
                             className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                         >
-                            Benefits
+                            Benefícios
                         </Link>
                         <WalletButton />
                     </div>
