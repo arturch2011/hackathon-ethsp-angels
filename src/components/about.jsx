@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
 const About = () => {
     return (
@@ -12,7 +12,7 @@ const About = () => {
         >
             <div className="my-20 mx-auto w-1/2 flex flex-col justify-center items-center">
                 <motion.h2
-                    className="text-6xl font-bold text-center text-gold font-bold"
+                    className="text-6xl font-bold text-center text-gold"
                     initial={{ y: -20, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.2, duration: 0.5 }}
@@ -156,7 +156,7 @@ const About = () => {
                 </motion.div>
             </div>
         </motion.section>
-    )
-}
+    );
+};
 
-export default About
+export default About;
