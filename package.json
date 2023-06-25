@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && truffle compile",
+    "build": "truffle compile && next build",
     "start": "next start",
     "lint": "next lint"
   },
