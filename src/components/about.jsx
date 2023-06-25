@@ -143,7 +143,7 @@ const About = () => {
                                 transition={{ delay: 0.8, duration: 0.5 }}
                             >
                                 Angels harnesses the power of advanced technology to streamline the donation process. By
-                                utilizing blockchain's decentralized infrastructure, the platform achieves enhanced
+                                utilizing blockchains decentralized infrastructure, the platform achieves enhanced
                                 efficiency, reducing overhead costs and minimizing administrative burdens. Additionally,
                                 the scalability of blockchain allows Angels to handle a high volume of transactions,
                                 ensuring that campaigns can rapidly scale and respond to urgent needs. This

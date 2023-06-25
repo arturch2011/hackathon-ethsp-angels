@@ -1,7 +1,8 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { useState } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+import Image from 'next/image';
 
 const Expandable = () => {
     const [showContent, setShowContent] = useState({
@@ -9,11 +10,11 @@ const Expandable = () => {
         div2: false,
         div3: false,
         div4: false,
-    })
+    });
 
     const handleDivClick = (div) => {
         // Verificar o estado atual da div clicada
-        const isCurrentlyOpen = showContent[div]
+        const isCurrentlyOpen = showContent[div];
 
         // Fechar todas as divs
         const updatedShowContent = {
@@ -21,16 +22,16 @@ const Expandable = () => {
             div2: false,
             div3: false,
             div4: false,
-        }
+        };
 
         // Abrir a div clicada, se ela estiver fechada
         if (!isCurrentlyOpen) {
-            updatedShowContent[div] = true
+            updatedShowContent[div] = true;
         }
 
         // Atualizar o estado
-        setShowContent(updatedShowContent)
-    }
+        setShowContent(updatedShowContent);
+    };
 
     return (
         <section className="w-full mb-60">
@@ -93,7 +94,7 @@ const Expandable = () => {
                                 </div>
                                 <div className="flex-1 order-1 md:order-2 mt-10 md:mt-0 aspect-[821/750]">
                                     <div>
-                                        <img
+                                        <Image
                                             src="global-reach-image.jpg"
                                             alt="Global Reach"
                                             className="w-full h-full object-cover rounded-lg"
@@ -147,7 +148,7 @@ const Expandable = () => {
                             <div className="flex flex-col md:flex-row">
                                 <div className="flex-1 pt-5 md:pt-20 order-2 md:order-1 flex flex-col justify-center">
                                     <p className="tw-lead text-2xl md:tw-title-sm mb-10 text-camber font-bold">
-                                        Angels' NFTs go beyond being mere collectibles—they offer tangible benefits to
+                                        Angels NFTs go beyond being mere collectibles—they offer tangible benefits to
                                         their holders. These special NFTs grant access to exclusive events, early
                                         campaign previews, or even discounts on partner products and services.
                                     </p>
@@ -159,7 +160,7 @@ const Expandable = () => {
                                 </div>
                                 <div className="flex-1 order-1 md:order-2 mt-10 md:mt-0 aspect-[821/750]">
                                     <div>
-                                        <img
+                                        <Image
                                             src="enhanced-security-image.jpg"
                                             alt="Enhanced Security"
                                             className="w-full h-full object-cover rounded-lg"
@@ -226,7 +227,7 @@ const Expandable = () => {
                                 </div>
                                 <div className="flex-1 order-1 md:order-2 mt-10 md:mt-0 aspect-[821/750]">
                                     <div>
-                                        <img
+                                        <Image
                                             src="efficient-transactions-image.jpg"
                                             alt="Efficient Transactions"
                                             className="w-full h-full object-cover rounded-lg"
@@ -293,7 +294,7 @@ const Expandable = () => {
                                 </div>
                                 <div className="flex-1 order-1 md:order-2 mt-10 md:mt-0 aspect-[821/750]">
                                     <div>
-                                        <img
+                                        <Image
                                             src="efficient-transactions-image.jpg"
                                             alt="Efficient Transactions"
                                             className="w-full h-full object-cover rounded-lg"
@@ -306,7 +307,7 @@ const Expandable = () => {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Expandable
+export default Expandable;

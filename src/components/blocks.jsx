@@ -52,7 +52,7 @@ const Blocks = () => {
                                 If the player fails to achieve their goals, the deposited money will be directed towards
                                 charitable campaigns generated on the GoalGame website, also on the blockchain. These
                                 campaigns will be carefully selected, focusing on relevant and impactful social causes.
-                                This way, the money that wasn't redeemed by the players will be converted into valuable
+                                This way, the money that wasnt redeemed by the players will be converted into valuable
                                 resources to help those in need.
                             </p>
                         </motion.div>
@@ -61,10 +61,10 @@ const Blocks = () => {
                             <p>
                                 On the other hand, if the player successfully achieves their goals within the
                                 established timeframe, they will be entitled to receive a portion of the money deposited
-                                by players who couldn't meet their goals. This financial reward serves as an additional
+                                by players who couldnt meet their goals. This financial reward serves as an additional
                                 incentive to motivate and encourage players to give their best in order to reach their
                                 objectives. The distribution of earnings will be fair and transparent, taking into
-                                account each player's individual performance.
+                                account each players individual performance.
                             </p>
                         </motion.div>
                     </div>
