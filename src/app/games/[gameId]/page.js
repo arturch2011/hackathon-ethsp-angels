@@ -10,71 +10,114 @@ import { useEffect, useState } from 'react';
 const GameID = ({ params }) => {
     const addr = params.gameId;
     const [gameProps, setGameProps] = useState({});
-    //const [dataIn, setDataIn] = useState(0);
-    // console.log(addr);
-    // console.log(typeof addr);
 
     useEffect(() => {
         const getGameProps = async () => {
-            const callerAddr = await web3.eth.getAccounts();
-            const dailyImprovementsInstance = await dailyImprovementsContract(web3, addr);
-            const name = await dailyImprovementsInstance.methods.name().call();
-            const goal = await dailyImprovementsInstance.methods.goal().call();
-            const description = await dailyImprovementsInstance.methods.description().call();
-            const validator = await dailyImprovementsInstance.methods.validator().call();
-            const creator = await dailyImprovementsInstance.methods.creator().call();
-            const isClosed = await dailyImprovementsInstance.methods.isClosed().call();
-            const totalValue = await dailyImprovementsInstance.methods.totalValue().call();
-            const myProgress = await dailyImprovementsInstance.methods.myProgress().call({ from: callerAddr[0] });
-            const start = await dailyImprovementsInstance.methods.inicio().call();
-            const end = await dailyImprovementsInstance.methods.fim().call();
-            const category = await dailyImprovementsInstance.methods.category().call();
+            //const callerAddr = await web3.eth.getAccounts();
+            const promises = await getData(addr);
+            console.log(promises);
+            //const data = await Promise.all(promises);
 
-            const gameProps = {
-                addr,
-                name,
-                goal,
-                description,
-                start,
-                end,
-                category,
-                validator,
-                creator,
-                // participants,
-                // validators,
-                isClosed,
-                totalValue,
-                myProgress,
-                start,
-                end,
-                category,
-                callerAddr,
-            };
+            // const dailyImprovementsInstance = await dailyImprovementsContract(web3, addr);
+            // const name = await dailyImprovementsInstance.methods.name().call();
+            // const goal = await dailyImprovementsInstance.methods.goal().call();
+            // const description = await dailyImprovementsInstance.methods.description().call();
+            // const validator = await dailyImprovementsInstance.methods.validator().call();
+            // const creator = await dailyImprovementsInstance.methods.creator().call();
+            // const isClosed = await dailyImprovementsInstance.methods.isClosed().call();
+            // const totalValue = await dailyImprovementsInstance.methods.totalValue().call();
+            // const myProgress = await dailyImprovementsInstance.methods.myProgress().call({ from: callerAddr[0] });
+            // const start = await dailyImprovementsInstance.methods.inicio().call();
+            // const end = await dailyImprovementsInstance.methods.fim().call();
+            // const category = await dailyImprovementsInstance.methods.category().call();
+
+            // const gameProps = {
+            //     addr,
+            //     name,
+            //     goal,
+            //     description,
+            //     start,
+            //     end,
+            //     category,
+            //     validator,
+            //     creator,
+            //     isClosed,
+            //     totalValue,
+            //     myProgress,
+            //     start,
+            //     end,
+            //     category,
+            //     callerAddr,
+            // };
 
             //console.log(gameProps.category);
 
-            setGameProps(gameProps);
+            setGameProps(promises);
         };
 
         getGameProps();
     }, [addr]);
-    //const game = Promise.all(gameProps);
-    console.log(gameProps);
-    //console.log(gameProps);
-    // const dataIn = gameProps.start;
-    // const dataInString = dataIn.toString();
-    // const diaIn = dataInString.substring(0, 2);
-    // const mesIn = dataInString.substring(2, 4);
-    // const anoIn = dataInString.substring(4, 8);
-    // const startDate = new Date(anoIn, mesIn, diaIn); // Exemplo de data de início
-    // const endDate = new Date(2023, 5, 30); // Exemplo de data de fim
-    // const now = new Date();
-    // const totalAmount = 5000; // Exemplo de valor arrecadado
-    // const goalAmount = 10000; // Exemplo de valor meta
 
-    // const totalDuration = endDate.getTime() - startDate.getTime();
-    // const elapsedDuration = now.getTime() - startDate.getTime();
-    // const progress = ((elapsedDuration / totalDuration) * 100).toFixed(2);
+    // console.log(gameProps);
+    // console.log(gameProps.start + '');
+    let startStr = gameProps.start + '';
+    let sDay = startStr.slice(0, 2);
+    console.log(sDay);
+    let sMt = startStr.slice(2, 4);
+    console.log(sMt);
+    let sY = startStr.slice(4, 8);
+    console.log(sY);
+    let startDate = new Date(sY, sMt, sDay);
+    console.log('Data de inicio: ' + startDate);
+    let endStr = gameProps.end + '';
+    let eDay = endStr.slice(0, 2);
+    console.log(eDay);
+    let eMt = endStr.slice(2, 4);
+    console.log(eMt);
+    let eY = endStr.slice(4, 8);
+    console.log(eY);
+    let endDate = new Date(eY, eMt, eDay);
+    console.log('Data de termino: ' + endDate);
+
+    let totalDuration = endDate.getTime() - startDate.getTime();
+    let now = new Date();
+    let elapsedDuration = now.getTime() - startDate.getTime();
+    let progress = ((elapsedDuration / totalDuration) * 100).toFixed(2);
+    console.log(progress);
+
+    const getData = async (addr) => {
+        const callerAddr = await web3.eth.getAccounts();
+        const dailyImprovementsInstance = await dailyImprovementsContract(web3, addr);
+        const name = await dailyImprovementsInstance.methods.name().call();
+        const goal = await dailyImprovementsInstance.methods.goal().call();
+        const description = await dailyImprovementsInstance.methods.description().call();
+        const validator = await dailyImprovementsInstance.methods.validator().call();
+        const creator = await dailyImprovementsInstance.methods.creator().call();
+        const isClosed = await dailyImprovementsInstance.methods.isClosed().call();
+        const totalValue = await dailyImprovementsInstance.methods.totalValue().call();
+        const myProgress = await dailyImprovementsInstance.methods.myProgress().call({ from: callerAddr[0] });
+        const start = await dailyImprovementsInstance.methods.inicio().call();
+        const end = await dailyImprovementsInstance.methods.fim().call();
+        const category = await dailyImprovementsInstance.methods.category().call();
+        return {
+            addr,
+            name,
+            goal,
+            description,
+            start,
+            end,
+            category,
+            validator,
+            creator,
+            isClosed,
+            totalValue,
+            myProgress,
+            start,
+            end,
+            category,
+            callerAddr,
+        };
+    };
 
     return (
         <>
