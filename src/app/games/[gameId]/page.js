@@ -134,11 +134,11 @@ const GameID = ({ params }) => {
 
                         <div className="flex items-center mb-6">
                             <div className="mr-6">
-                                <p className="text-sm text-gray-500">Start date:</p>
+                                <p className="text-sm text-gray-500">Data de inicio:</p>
                                 <p className="text-lg font-semibold text-gray-800">{gameProps.start + ''}</p>
                             </div>
                             <div>
-                                <p className="text-sm text-gray-500">End Date:</p>
+                                <p className="text-sm text-gray-500">Data de fim:</p>
                                 <p className="text-lg font-semibold text-gray-800">{gameProps.end + ''}</p>
                             </div>
                         </div>
@@ -150,7 +150,7 @@ const GameID = ({ params }) => {
                             <p className="ml-4 text-gray-700">{}</p>
                         </div>
                         <div className="mb-6">
-                            <p className="text-sm text-gray-500">Donate category:</p>
+                            <p className="text-sm text-gray-500">Categoria de doação:</p>
                             <p className="text-lg font-semibold text-gray-800 ">{gameProps.category}</p>
                         </div>
                         <div className="mb-6">
@@ -158,25 +158,68 @@ const GameID = ({ params }) => {
                             <p className="text-lg font-semibold text-gray-800 ">{gameProps.totalValue}</p>
                         </div>
                         <div className="flex flex-col">
-                            <button className="bg-dgold text-white py-2 px-6 rounded-lg shadow-lg mb-6">
-                                Participate
-                            </button>
-                            <button className="bg-dgold text-white py-2 px-6 rounded-lg shadow-lg mb-6">
-                                Validade Daily Goal
-                            </button>
-                            <button className="bg-dgold text-white py-2 px-6 rounded-lg shadow-lg">
-                                Finalize Game
-                            </button>
+                            <div className="flex flex-col py-2 px-6">
+                                <div className="mb-6">
+                                    <div>Doar Premio:</div>
+                                    <div className="flex">
+                                        <label htmlFor="doarpremio" className="text-sm text-gray-500 mr-2">
+                                            Tudo
+                                        </label>
+                                        <input id="doarpremio" type="checkbox" value={true}></input>
+                                    </div>
+                                    <div className="flex">
+                                        <label htmlFor="partepremio" className="text-sm text-gray-500 mr-2">
+                                            Apenas parte
+                                        </label>
+                                        <input id="partepremio" type="checkbox" value={true}></input>
+                                    </div>
+                                </div>
+
+                                <input
+                                    type="text"
+                                    id="participate"
+                                    placeholder="Valor de contribuição"
+                                    className="w-full border-gray-300 rounded-md p-3 text-black placeholder:italic"
+                                    onChange={(e) => setParticipate(e.target.value)}
+                                />
+                                <button
+                                    type="submit"
+                                    className="bg-dgold text-white py-2 px-6 rounded-lg shadow-lg mb-6"
+                                >
+                                    Participar
+                                </button>
+                            </div>
+                            <div className="flex flex-col py-2 px-6">
+                                <input
+                                    type="text"
+                                    id="valaddress"
+                                    placeholder="Endereço da carteira"
+                                    className="w-full border-gray-300 rounded-md p-3 text-black placeholder:italic"
+                                    onChange={(e) => setValaddress(e.target.value)}
+                                />
+                                <button
+                                    type="submit"
+                                    className="bg-dgold text-white py-2 px-6 rounded-lg shadow-lg mb-6"
+                                >
+                                    Validar Meta Diaria
+                                </button>
+                            </div>
+                            <div className="flex flex-col py-2 px-6">
+                                <button
+                                    type="submit"
+                                    className="bg-dgold text-white py-2 px-6 rounded-lg shadow-lg mb-6"
+                                >
+                                    Finalizar GoalGame
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div className="w-1/2 ml-4 p-6">
                         <h2 className="text-4xl pb-4 font-bold text-gray-800 mb-4 border-b-2 border-slate-700">
-                            Description
+                            Descrição
                         </h2>
-                        <p className="text-lg text-gray-700 mb- overflow-hidden">{gameProps.description}</p>
+                        <p className="text-lg text-gray-700 break-words">{gameProps.description}</p>
                     </div>
-
-                    <p className="text-lg text-gray-700 mb-6">{gameProps.description}</p>
                 </div>
             </motion.section>
             <div>
@@ -195,11 +238,6 @@ const GameID = ({ params }) => {
                 <p>Caller Addr: {gameProps.callerAddr + ''}</p>
                 <p>Validator: {gameProps.validator + ''}</p>
             </div>
-
-            <button className="bg-dgold text-white py-2 px-6 rounded-lg shadow-lg">Participate</button>
-            <button className="bg-dgold text-white py-2 px-6 rounded-lg shadow-lg">Finalize Game</button>
-            <button className="bg-dgold text-white py-2 px-6 rounded-lg shadow-lg">Validade Daily Goal</button>
-            <button className="bg-dgold text-white py-2 px-6 rounded-lg shadow-lg">Validade Daily Goal</button>
         </>
     );
 };
