@@ -1,6 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+import quadv from '../../public/quadradverde.jpg';
+import quadv2 from '../../public/quadradovermelho.jpg';
+import quadl from '../../public/quadradolaranja.jpg';
+import quada from '../../public/quadradoazul.jpg';
 
 const Blocks = () => {
     const containerVariants = {
@@ -29,43 +34,21 @@ const Blocks = () => {
                     whileInView="visible"
                     className="flex flex-col items-center"
                 >
-                    <motion.h2
-                        variants={itemVariants}
-                        className="text-4xl md:text-6xl font-bold mb-8 text-center text-gray-500"
-                    >
-                        The GoalGame
+                    <motion.h2 variants={itemVariants} className="text-4xl md:text-6xl font-bold mb-8 text-center">
+                        Nossos Objetivos
                     </motion.h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <motion.div variants={itemVariants} className="bg-gray-500 p-8 rounded-lg shadow-md">
-                            <h3 className="text-xl font-bold mb-4">Welcome to GoalGame</h3>
-                            <p>
-                                Welcome to GoalGame, an exciting blockchain-based game that combines personal
-                                goal-setting, financial incentives, and social impact. In this innovative platform,
-                                users are invited to deposit money and challenge themselves to achieve their goals
-                                within a specified timeframe. The game leverages the power of blockchain technology to
-                                ensure transparency, security, and fairness in all transactions.
-                            </p>
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                        <motion.div variants={itemVariants} className="shadow-md">
+                            <Image src={quadv} alt="logo" className="w-auto rounded-xl" />
                         </motion.div>
-                        <motion.div variants={itemVariants} className="bg-gray-500 p-8 rounded-lg shadow-md">
-                            <h3 className="text-xl font-bold mb-4">Charitable Campaigns and Social Impact</h3>
-                            <p>
-                                If the player fails to achieve their goals, the deposited money will be directed towards
-                                charitable campaigns generated on the GoalGame website, also on the blockchain. These
-                                campaigns will be carefully selected, focusing on relevant and impactful social causes.
-                                This way, the money that wasnt redeemed by the players will be converted into valuable
-                                resources to help those in need.
-                            </p>
+                        <motion.div variants={itemVariants} className="shadow-md">
+                            <Image src={quadv2} alt="logo" className="w-auto rounded-xl" />
                         </motion.div>
-                        <motion.div variants={itemVariants} className="bg-gray-500 p-8 rounded-lg shadow-md">
-                            <h3 className="text-xl font-bold mb-4">Financial Rewards for Success</h3>
-                            <p>
-                                On the other hand, if the player successfully achieves their goals within the
-                                established timeframe, they will be entitled to receive a portion of the money deposited
-                                by players who couldnt meet their goals. This financial reward serves as an additional
-                                incentive to motivate and encourage players to give their best in order to reach their
-                                objectives. The distribution of earnings will be fair and transparent, taking into
-                                account each players individual performance.
-                            </p>
+                        <motion.div variants={itemVariants} className="shadow-md">
+                            <Image src={quadl} alt="logo" className="w-auto rounded-xl" />
+                        </motion.div>
+                        <motion.div variants={itemVariants} className="shadow-md">
+                            <Image src={quada} alt="logo" className="w-auto rounded-xl" />
                         </motion.div>
                     </div>
                 </motion.div>
