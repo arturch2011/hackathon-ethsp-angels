@@ -24,12 +24,16 @@ const Create = () => {
     const [name, setName] = useState('');
     const [goal, setGoal] = useState('');
     const [description, setDescription] = useState('');
+    const [start, setStart] = useState('');
+    const [end, setEnd] = useState('');
+    const [category, setCategory] = useState('');
+    const [validator, setValidator] = useState('');
 
     const createCampaignHanddler = async () => {
         const accounts = await web3.eth.getAccounts();
         const dailyImprovementsFactory = dailyImprovementsFactoryContract(web3);
         await dailyImprovementsFactory.methods
-            .createDailyImprovements(name, goal, description)
+            .createDailyImprovements(name, goal, description, start, end, category, validator)
             .send({ from: accounts[0] });
     };
 
@@ -73,6 +77,64 @@ const Create = () => {
                                 onChange={(e) => setGoal(e.target.value)}
                             />
                         </div>
+                        <div className="mb-6">
+                            <label htmlFor="start" className="block text-xl font-medium mb-2">
+                                Start Date
+                            </label>
+                            <input
+                                type="start"
+                                id="start"
+                                placeholder="dd/mm/yyyy"
+                                className="w-full border-gray-300 rounded-md p-3 text-black placeholder:italic"
+                                onChange={(e) => setStart(e.target.value)}
+                            />
+                        </div>
+                        <div className="mb-6">
+                            <label htmlFor="end" className="block text-xl font-medium mb-2">
+                                End Date
+                            </label>
+                            <input
+                                type="end"
+                                id="end"
+                                placeholder="dd/mm/yyyy"
+                                className="w-full border-gray-300 rounded-md p-3 text-black placeholder:italic"
+                                onChange={(e) => setEnd(e.target.value)}
+                            />
+                        </div>
+                        <div className="mb-6">
+                            <label htmlFor="category" className="block text-xl font-medium mb-2">
+                                Donate ODS Category
+                            </label>
+                            <select
+                                type="category"
+                                id="category"
+                                className="w-full border-gray-300 rounded-md p-3 text-black"
+                                onChange={(e) => setCategory(e.target.value)}
+                            >
+                                <option value="">Select a ODS category</option>
+                                <option value="Health and Well-being">Health and Well-being</option>
+                                <option value="Education and Quality">Education and Quality</option>
+                                <option value="Industry, Innovation, and Infrastructure">
+                                    Industry, Innovation, and Infrastructure
+                                </option>
+                                <option value="Peace, Justice, and Effective Institutions">
+                                    Peace, Justice, and Effective Institutions
+                                </option>
+                            </select>
+                        </div>
+                        <div className="mb-6">
+                            <label htmlFor="validator" className="block text-xl font-medium mb-2">
+                                ONG Address
+                            </label>
+                            <input
+                                type="validator"
+                                id="validator"
+                                placeholder="wallet address of the ONG"
+                                className="w-full border-gray-300 rounded-md p-3 text-black placeholder:italic"
+                                onChange={(e) => setValidator(e.target.value)}
+                            />
+                        </div>
+
                         <div className="mb-6">
                             <label htmlFor="description" className="block text-xl font-medium mb-2">
                                 Description

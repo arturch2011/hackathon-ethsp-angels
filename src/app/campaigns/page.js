@@ -63,7 +63,7 @@ const Page = () => {
     return (
         <>
             <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="min-h-screen py-20 bg-dblue">
-                <div className="w-full py-28 max-w-screen-2xl mx-auto px-4 sm:px-8 lg:px-16">
+                <div className="w-full py-28 max-w-7xl mx-auto px-4">
                     <div className="flex items-center justify-between text-amber">
                         <div>
                             <button

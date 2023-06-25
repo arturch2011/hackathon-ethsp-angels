@@ -60,7 +60,7 @@ const Page = () => {
     return (
         <>
             <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="min-h-screen py-20 bg-dblue">
-                <div className="w-full py-28 max-w-screen-2xl mx-auto px-4 sm:px-8 lg:px-16">
+                <div className="w-full py-28 max-w-7xl mx-auto px-4">
                     <div className="flex items-center justify-between text-amber">
                         <div>
                             <button
@@ -132,8 +132,9 @@ const Page = () => {
                                     <Link href={`/games/${improvements.addr}`}>
                                         <div className="h-full p-3 bg-dgold rounded-xl flex flex-col overflow-hidden">
                                             <h1 className='font-bold text-4xl mb-4"'>{improvements.name}</h1>
-                                            <h2 className='font-bold text-2xl mb-4"'>{improvements.goal}</h2>
-                                            <p>{improvements.creator}</p>
+                                            <p className='text-xl mb-4"'>Period: date1 - date2</p>
+                                            <p className='font-bold text-2xl mb-4"'>{improvements.goal}</p>
+                                            <p className='font-bold text-2xl mb-4"'>category</p>
                                         </div>
                                     </Link>
                                 </div>
