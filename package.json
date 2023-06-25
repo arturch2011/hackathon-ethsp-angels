@@ -17,7 +17,9 @@
     "framer-motion": "^10.12.17",
     "next": "13.4.7",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "truffle": "^5.10.1",
+    "web3": "^4.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
