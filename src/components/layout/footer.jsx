@@ -9,47 +9,47 @@ const Footer = () => {
             <div className="container mx-auto px-4 py-8">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div>
-                        <h4 className="text-xl font-semibold mb-4">Company</h4>
+                        <h4 className="text-xl font-semibold mb-4">Compania</h4>
                         <ul className="space-y-2">
                             <li>
                                 <a href="#" className="text-camber hover:text-amber transition-colors duration-300">
-                                    About Us
+                                    Sobre Nós
                                 </a>
                             </li>
                             <li>
                                 <a href="#" className="text-camber hover:text-amber transition-colors duration-300">
-                                    Careers
+                                    Carrera
                                 </a>
                             </li>
                             <li>
                                 <a href="#" className="text-camber hover:text-amber transition-colors duration-300">
-                                    Contact Us
+                                    Contato
                                 </a>
                             </li>
                         </ul>
                     </div>
                     <div>
-                        <h4 className="text-xl font-semibold mb-4">Services</h4>
+                        <h4 className="text-xl font-semibold mb-4">Serviços</h4>
                         <ul className="space-y-2">
                             <li>
                                 <a href="#" className="text-camber hover:text-amber transition-colors duration-300">
-                                    AI Solutions
+                                    Soluções IA
                                 </a>
                             </li>
                             <li>
                                 <a href="#" className="text-camber hover:text-amber transition-colors duration-300">
-                                    Web3 Development
+                                    Desenvolvimento Web3
                                 </a>
                             </li>
                             <li>
                                 <a href="#" className="text-camber hover:text-amber transition-colors duration-300">
-                                    Sustainability
+                                    Sustentabilidade
                                 </a>
                             </li>
                         </ul>
                     </div>
                     <div>
-                        <h4 className="text-xl font-semibold mb-4">Resources</h4>
+                        <h4 className="text-xl font-semibold mb-4">Recursos</h4>
                         <ul className="space-y-2">
                             <li>
                                 <a href="#" className="text-camber hover:text-amber transition-colors duration-300">
@@ -64,7 +64,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <h4 className="text-xl font-semibold mb-4">Follow Us</h4>
+                        <h4 className="text-xl font-semibold mb-4">Siga-nos</h4>
                         <ul className="space-y-2">
                             <li>
                                 <a href="#" className="text-camber hover:text-amber transition-colors duration-300">

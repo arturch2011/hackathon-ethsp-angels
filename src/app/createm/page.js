@@ -129,7 +129,7 @@ const Create = () => {
                             <input
                                 type="validator"
                                 id="validator"
-                                placeholder="wallet address of the ONG"
+                                placeholder="Endereço da carteira da ONG"
                                 className="w-full border-gray-300 rounded-md p-3 text-black placeholder:italic"
                                 onChange={(e) => setValidator(e.target.value)}
                             />

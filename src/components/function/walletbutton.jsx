@@ -49,7 +49,7 @@ const WalletButton = () => {
             id="walletButton"
             className="bg-cblue hover:bg-gold font-bold py-2 px-4 rounded-lg"
         >
-            Connect
+            Conectar
         </motion.button>
     );
 };
