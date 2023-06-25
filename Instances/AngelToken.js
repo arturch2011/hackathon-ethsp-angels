@@ -1,4 +1,4 @@
-const address = '0xe9f907BdA74BD062E829b68FD6aEe25a44Cd1DC1';
+const address = '0x1bc5cEC4Be75C23a27B0F5320ED1B763DE1c9098';
 const { abi } = require('../build/contracts/AngelToken.json');
 
 const angelTokenContract = (web3) => {

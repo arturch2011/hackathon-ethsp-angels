@@ -1,4 +1,4 @@
-const address = '0x2A14cc523f3d4dd6dC081FA25b31291A3c961aad';
+const address = '0x5C831E10eF6Ce071E457A6d9171d431aFC3c3fab';
 
 const { abi } = require('../build/contracts/AngelsFactory.json');
 

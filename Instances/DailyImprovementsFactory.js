@@ -1,4 +1,4 @@
-const address = '0xC94a06B724E7c40c0384c848279F020a75b1FF59';
+const address = '0x7Fae45e44822a799d043D26D3698AdeFa4A2a556';
 const { abi } = require('../build/contracts/DailyImprovementsFactory.json');
 
 const dailyImprovementsFactoryContract = (web3) => {

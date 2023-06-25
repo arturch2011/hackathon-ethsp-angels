@@ -4,7 +4,8 @@ import './AngelToken.sol';
 
 contract DailyImprovementsFactory {
     address[] public deployedDailyImprovements;
-    address angelTokenAddress;
+
+    //address angelTokenAddress;
 
     function createDailyImprovements(
         string memory _name,
@@ -29,14 +30,14 @@ contract DailyImprovementsFactory {
         return deployedDailyImprovements.length;
     }
 
-    function setAngelTokenAddress(address _angelTokenAddress) public {
-        angelTokenAddress = _angelTokenAddress;
-    }
+    // function setAngelTokenAddress(address _angelTokenAddress) public {
+    //     angelTokenAddress = _angelTokenAddress;
+    // }
 
-    function transferAngelTokens(address _to, uint _amount) public {
-        AngelToken angelToken = AngelToken(angelTokenAddress);
-        angelToken.transfer(_to, _amount);
-    }
+    // function transferAngelTokens(address _to, uint _amount) public {
+    //     AngelToken angelToken = AngelToken(angelTokenAddress);
+    //     angelToken.transfer(_to, _amount);
+    // }
 }
 
 contract DailyImprovements {
@@ -45,7 +46,7 @@ contract DailyImprovements {
     string public description;
     address payable public creator;
 
-    address dailyImprovementsFactoryAddrs;
+    //address dailyImprovementsFactoryAddrs;
     address payable[] public participants;
 
     address public validator; // criar require
@@ -96,7 +97,7 @@ contract DailyImprovements {
 
     function contribute(uint _value, bool _prizeDonation, bool _fullDonation) public payable {
         require(msg.value >= _value, 'Insufficient funds');
-        require(!isClosed, 'This campaign is closed');
+        require(isClosed != true, 'This campaign is closed');
         prizeDonation[msg.sender] = _prizeDonation;
         fullDonation[msg.sender] = _fullDonation;
         contributions[msg.sender] += _value;
@@ -105,7 +106,7 @@ contract DailyImprovements {
     }
 
     function validate(address _participant) public restrictedValidador {
-        require(!isClosed, 'This campaign is closed');
+        require(isClosed != true, 'This campaign is closed');
         require(contributions[_participant] > 0, 'This participant has not contributed yet');
         require(validations[_participant] <= totalValidations, 'This participant has already accomplished the goal');
         validations[_participant] += 1;
@@ -116,19 +117,19 @@ contract DailyImprovements {
     }
 
     function finalizeImprovement() public restrictedCreator {
-        require(!isClosed, 'This campaign is closed');
+        require(isClosed != true, 'This campaign is closed');
 
-        DailyImprovementsFactory dailyImprovementsFactory = DailyImprovementsFactory(dailyImprovementsFactoryAddrs);
+        //DailyImprovementsFactory dailyImprovementsFactory = DailyImprovementsFactory(dailyImprovementsFactoryAddrs);
         uint dontGetIt = 0;
 
         for (uint i = 0; i < participants.length; i++) {
             if (validations[participants[i]] >= minimumValidations) {
                 if (!fullDonation[participants[i]]) {
                     participants[i].transfer(contributions[participants[i]]);
-                    dailyImprovementsFactory.transferAngelTokens(participants[i], contributions[participants[i]] * 100);
+                    //dailyImprovementsFactory.transferAngelTokens(participants[i], contributions[participants[i]] * 100);
                 } else {
                     creator.transfer(contributions[participants[i]]);
-                    dailyImprovementsFactory.transferAngelTokens(participants[i], contributions[participants[i]] * 100);
+                    //dailyImprovementsFactory.transferAngelTokens(participants[i], contributions[participants[i]] * 100);
                 }
             } else {
                 dontGetIt += 1;
@@ -160,4 +161,8 @@ contract DailyImprovements {
     function getAwards() public view returns (uint) {
         return awards[msg.sender];
     }
+
+    // function setDailyImprovementsFactoryAddrs(address _dailyImprovementsFactoryAddrs) public restrictedCreator {
+    //     dailyImprovementsFactoryAddrs = _dailyImprovementsFactoryAddrs;
+    // }
 }
