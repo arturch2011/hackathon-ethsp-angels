@@ -87,7 +87,7 @@ const Navbar = () => {
                                 >
                                     Participar
                                     {showDrop.drop1 && (
-                                        <div className="absolute flex flex-col items-center rounded-lg mt-12 p-4 bg-slate-700/50 backdrop-blur-xl">
+                                        <div className="absolute flex flex-col items-center rounded-lg mt-12 p-4 bg-slate-400 backdrop-blur-xl">
                                             <Link
                                                 href="/games"
                                                 className="p-2 hover:bg-white w-full rounded-lg text-center"
@@ -109,7 +109,7 @@ const Navbar = () => {
                                 >
                                     Criar
                                     {showDrop.drop2 && (
-                                        <div className="absolute flex flex-col items-center rounded-lg mt-12 p-4 bg-slate-700/50 backdrop-blur-xl">
+                                        <div className="absolute flex flex-col items-center rounded-lg mt-12 p-4 bg-slate-400 backdrop-blur-xl">
                                             <Link
                                                 href="/createc"
                                                 className="p-2 hover:bg-white w-full rounded-lg text-center"
@@ -171,28 +171,61 @@ const Navbar = () => {
                     transition={{ duration: 0.2 }}
                     className="md:hidden bg-gray-800 backdrop-blur-xl"
                 >
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
                         <Link
                             href="/"
-                            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                            className="w-full text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium text-center"
                         >
                             Início
                         </Link>
-                        <Link
-                            href="/campains"
-                            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                        <div
+                            onClick={() => handleDropClick('drop3')}
+                            className="w-full text-center text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                         >
                             Participar
-                        </Link>
-                        <Link
-                            href="/create"
-                            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                            {showDrop.drop3 && (
+                                <div className="flex flex-col items-center rounded-lg mt-12 p-4 bg-slate-400 backdrop-blur-xl">
+                                    <Link
+                                        href="/games"
+                                        className="p-2 hover:bg-white w-full rounded-lg text-center hover:text-black"
+                                    >
+                                        GoalGames
+                                    </Link>
+                                    <Link
+                                        href="/campaigns"
+                                        className="p-2 hover:bg-white w-full rounded-lg text-center hover:text-black"
+                                    >
+                                        Campanhas
+                                    </Link>
+                                </div>
+                            )}
+                        </div>
+                        <div
+                            onClick={() => handleDropClick('drop4')}
+                            className="w-full text-center text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                         >
                             Criar
-                        </Link>
+                            {showDrop.drop4 && (
+                                <div className="flex flex-col items-center rounded-lg mt-12 p-4 bg-slate-400 backdrop-blur-xl">
+                                    <Link
+                                        href="/createm"
+                                        className="p-2 hover:bg-white w-full rounded-lg text-center hover:text-black"
+                                    >
+                                        Criar GoalGame
+                                    </Link>
+                                    <Link
+                                        href="/createc"
+                                        className="p-2 hover:bg-white w-full rounded-lg text-center hover:text-black"
+                                    >
+                                        Criar Campanha
+                                    </Link>
+                                </div>
+                            )}
+                        </div>
+
                         <Link
                             href="/benefits"
-                            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                            className="w-full text-center text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                         >
                             Benefícios
                         </Link>

@@ -28,30 +28,31 @@ const GameID = ({ params }) => {
 
     // console.log(gameProps);
     // console.log(gameProps.start + '');
-    // let startStr = gameProps.start + '';
-    // let sDay = startStr.slice(0, 2);
-    // console.log(sDay);
-    // let sMt = startStr.slice(2, 4);
-    // console.log(sMt);
-    // let sY = startStr.slice(4, 8);
-    // console.log(sY);
-    // let startDate = new Date(sY, sMt, sDay);
-    // console.log('Data de inicio: ' + startDate);
-    // let endStr = gameProps.end + '';
-    // let eDay = endStr.slice(0, 2);
-    // console.log(eDay);
-    // let eMt = endStr.slice(2, 4);
-    // console.log(eMt);
-    // let eY = endStr.slice(4, 8);
-    // console.log(eY);
-    // let endDate = new Date(eY, eMt, eDay);
-    // console.log('Data de termino: ' + endDate);
 
-    // let totalDuration = endDate.getTime() - startDate.getTime();
-    // let now = new Date();
-    // let elapsedDuration = now.getTime() - startDate.getTime();
-    // let progress = ((elapsedDuration / totalDuration) * 100).toFixed(2);
-    // console.log(progress);
+    let startStr = gameProps.start + '';
+    let sDay = parseInt(startStr.substring(0, 2));
+    console.log(sDay);
+    let sMt = parseInt(startStr.substring(2, 4)) - 1;
+    console.log(sMt);
+    let sY = parseInt(startStr.substring(4, 8));
+    console.log(sY);
+    let startDate = new Date(sY, sMt, sDay);
+    console.log('Data de inicio: ' + startDate);
+    let endStr = gameProps.end + '';
+    let eDay = parseInt(endStr.slice(0, 2));
+    console.log(eDay);
+    let eMt = parseInt(endStr.slice(2, 4)) - 1;
+    console.log(eMt);
+    let eY = parseInt(endStr.slice(4, 8));
+    console.log(eY);
+    let endDate = new Date(eY, eMt, eDay);
+    console.log('Data de termino: ' + endDate);
+
+    let totalDuration = endDate.getTime() - startDate.getTime();
+    let now = new Date();
+    let elapsedDuration = now.getTime() - startDate.getTime();
+    let progress = ((elapsedDuration / totalDuration) * 100).toFixed(2);
+    console.log(progress);
 
     const getData = async (addr) => {
         const callerAddr = await web3.eth.getAccounts();
@@ -116,29 +117,29 @@ const GameID = ({ params }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
-                className="min-h-screen w-full bg-dblue py-28 flex items-center"
+                className="min-h-screen w-full bg-dblue py-28 px-4 flex items-center"
             >
-                <div className="max-w-7xl mx-auto w-full flex">
-                    <div className="w-1/2 bg-cblue p-6 rounded-xl mr-4">
+                <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row">
+                    <div className="w-full md:w-1/2 bg-cblue p-6 rounded-xl mr-4">
                         <h2 className="text-4xl font-bold text-gray-800 mb-4">{gameProps.name}</h2>
                         <p className="text-2xl text-gray-600 mb-6">{gameProps.goal}</p>
 
                         <div className="flex items-center mb-6">
                             <div className="mr-6">
                                 <p className="text-sm text-gray-500">Data de inicio:</p>
-                                <p className="text-lg font-semibold text-gray-800">{gameProps.start + ''}</p>
+                                <p className="text-lg font-semibold text-gray-800">{startDate.toLocaleDateString()}</p>
                             </div>
                             <div>
                                 <p className="text-sm text-gray-500">Data de fim:</p>
-                                <p className="text-lg font-semibold text-gray-800">{gameProps.end + ''}</p>
+                                <p className="text-lg font-semibold text-gray-800">{endDate.toLocaleDateString()}</p>
                             </div>
                         </div>
 
                         <div className="flex items-center mb-6">
-                            <div className="w-10/12 bg-gray-200 h-4 rounded-full">
-                                <div className="bg-purple h-4 rounded-full"></div>
+                            <div className="w-2/3 bg-gray-200 h-4 rounded-full">
+                                <div className="bg-dgold h-4 rounded-full" style={{ width: `${progress}%` }}></div>
                             </div>
-                            <p className="ml-4 text-gray-700">{}</p>
+                            <p className="ml-2 text-gray-700">{`${progress}% concluído`}</p>
                         </div>
                         <div className="mb-6">
                             <p className="text-sm text-gray-500">Categoria de doação:</p>
@@ -218,7 +219,7 @@ const GameID = ({ params }) => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-1/2 ml-4 p-6">
+                    <div className="w-full md:w-1/2 ml-4 p-6">
                         <h2 className="text-4xl pb-4 font-bold text-gray-800 mb-4 border-b-2 border-slate-700">
                             Descrição
                         </h2>
