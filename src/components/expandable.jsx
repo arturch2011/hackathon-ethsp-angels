@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
+import logo from '../../public/logo.png';
 
 const Expandable = () => {
     const [showContent, setShowContent] = useState({
@@ -34,7 +35,7 @@ const Expandable = () => {
     };
 
     return (
-        <section className="w-full mb-60">
+        <section className="w-full mb-60 text-purple">
             <div className="w-full mx-auto text-center max-w-screen-2xl my-16 md:pt-20">
                 <h2 className="text-6xl font-bold">
                     Level Up Generosity: Gamifying Donations with Special NFTs and Benefits
@@ -43,7 +44,7 @@ const Expandable = () => {
 
             {/* Div 1 */}
             <div className="w-full mx-auto my-5 px-20 max-w-screen-2xl">
-                <div className="bg-white/5 rounded-xl md:rounded-[32px] px-6 md:px-10 py-6 md:py-12">
+                <div className="bg-dgold rounded-xl md:rounded-[32px] px-6 md:px-10 py-6 md:py-12">
                     <motion.button
                         onClick={() => handleDivClick('div1')}
                         className="w-full flex justify-between items-center bg-transparent appearance-none border-none p-0"
@@ -93,13 +94,7 @@ const Expandable = () => {
                                     </p>
                                 </div>
                                 <div className="flex-1 order-1 md:order-2 mt-10 md:mt-0 aspect-[821/750]">
-                                    <div>
-                                        <Image
-                                            src="global-reach-image.jpg"
-                                            alt="Global Reach"
-                                            className="w-full h-full object-cover rounded-lg"
-                                        />
-                                    </div>
+                                    <div></div>
                                 </div>
                             </div>
                         </motion.div>
@@ -109,7 +104,7 @@ const Expandable = () => {
 
             {/* Div 2 */}
             <div className="w-full mx-auto my-5 px-20 max-w-screen-2xl">
-                <div className="bg-white/5 rounded-xl md:rounded-[32px] px-6 md:px-10 py-6 md:py-12">
+                <div className="bg-dgold rounded-xl md:rounded-[32px] px-6 md:px-10 py-6 md:py-12">
                     <motion.button
                         onClick={() => handleDivClick('div2')}
                         className="w-full flex justify-between items-center bg-transparent appearance-none border-none p-0"
@@ -159,13 +154,7 @@ const Expandable = () => {
                                     </p>
                                 </div>
                                 <div className="flex-1 order-1 md:order-2 mt-10 md:mt-0 aspect-[821/750]">
-                                    <div>
-                                        <Image
-                                            src="enhanced-security-image.jpg"
-                                            alt="Enhanced Security"
-                                            className="w-full h-full object-cover rounded-lg"
-                                        />
-                                    </div>
+                                    <div></div>
                                 </div>
                             </div>
                         </motion.div>
@@ -175,7 +164,7 @@ const Expandable = () => {
 
             {/* Div 3 */}
             <div className="w-full mx-auto my-5 px-20 max-w-screen-2xl">
-                <div className="bg-white/5 rounded-xl md:rounded-[32px] px-6 md:px-10 py-6 md:py-12">
+                <div className="bg-dgold rounded-xl md:rounded-[32px] px-6 md:px-10 py-6 md:py-12">
                     <motion.button
                         onClick={() => handleDivClick('div3')}
                         className="w-full flex justify-between items-center bg-transparent appearance-none border-none p-0"
@@ -226,13 +215,7 @@ const Expandable = () => {
                                     </p>
                                 </div>
                                 <div className="flex-1 order-1 md:order-2 mt-10 md:mt-0 aspect-[821/750]">
-                                    <div>
-                                        <Image
-                                            src="efficient-transactions-image.jpg"
-                                            alt="Efficient Transactions"
-                                            className="w-full h-full object-cover rounded-lg"
-                                        />
-                                    </div>
+                                    <div></div>
                                 </div>
                             </div>
                         </motion.div>
@@ -241,7 +224,7 @@ const Expandable = () => {
             </div>
 
             <div className="w-full mx-auto my-5 px-20 max-w-screen-2xl">
-                <div className="bg-white/5 rounded-xl md:rounded-[32px] px-6 md:px-10 py-6 md:py-12">
+                <div className="bg-dgold rounded-xl md:rounded-[32px] px-6 md:px-10 py-6 md:py-12">
                     <motion.button
                         onClick={() => handleDivClick('div4')}
                         className="w-full flex justify-between items-center bg-transparent appearance-none border-none p-0"
@@ -293,13 +276,7 @@ const Expandable = () => {
                                     </p>
                                 </div>
                                 <div className="flex-1 order-1 md:order-2 mt-10 md:mt-0 aspect-[821/750]">
-                                    <div>
-                                        <Image
-                                            src="efficient-transactions-image.jpg"
-                                            alt="Efficient Transactions"
-                                            className="w-full h-full object-cover rounded-lg"
-                                        />
-                                    </div>
+                                    <div></div>
                                 </div>
                             </div>
                         </motion.div>

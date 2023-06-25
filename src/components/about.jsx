@@ -5,24 +5,24 @@ import { motion } from 'framer-motion';
 const About = () => {
     return (
         <motion.section
-            className="w-full"
+            className="w-full text-purple"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
         >
             <div className="my-20 mx-auto w-1/2 flex flex-col justify-center items-center">
                 <motion.h2
-                    className="text-6xl font-bold text-center text-gold"
+                    className="text-6xl font-bold text-center"
                     initial={{ y: -20, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.2, duration: 0.5 }}
                 >
-                    Harnessing Blockchain for Effective Campaigns and Donations
+                    Sistema de Blockchain para alcançar seus objetivos e doações
                 </motion.h2>
             </div>
             <div className="w-full mx-auto px-20 max-w-screen-2xl grid grid-cols-1 md:grid-cols-2">
                 <motion.div
-                    className="md:border-0 md:odd:border-r md:border-solid md:border-gold overflow-hidden"
+                    className="md:border-0 md:odd:border-r md:border-solid md:border-purple overflow-hidden"
                     initial={{ x: -50, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.4, duration: 0.5 }}
@@ -30,7 +30,7 @@ const About = () => {
                     <div className="text-center h-full flex flex-col items-center md:pt-20 md:mx-[2px]">
                         <div className="max-w-md flex-1 flex flex-col items-center md:px-10 lg:px-1/12 xl:px-2/12">
                             <motion.h1
-                                className="mt-4 text-4xl text-gold font-bold"
+                                className="mt-4 text-4xl font-bold"
                                 initial={{ y: -20, opacity: 0 }}
                                 whileInView={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.6, duration: 0.5 }}
@@ -38,7 +38,7 @@ const About = () => {
                                 Blockchain: The Foundation of Trust in Giving
                             </motion.h1>
                             <motion.p
-                                className="mt-4 text-cgold font-bold"
+                                className="mt-4 font-bold"
                                 initial={{ y: -20, opacity: 0 }}
                                 whileInView={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.8, duration: 0.5 }}
@@ -51,11 +51,11 @@ const About = () => {
                                 effectiveness of the platform.
                             </motion.p>
                         </div>
-                        <div className="w-full border-b border-solid border-gold h-20 border-0 md:border-b"></div>
+                        <div className="w-full border-b border-solid border-purple h-20 border-0 md:border-b"></div>
                     </div>
                 </motion.div>
                 <motion.div
-                    className="md:border-0 md:odd:border-r md:border-solid md:border-gold overflow-hidden"
+                    className="md:border-0 md:odd:border-r md:border-solid md:border-purple overflow-hidden"
                     initial={{ x: 50, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.4, duration: 0.5 }}
@@ -63,7 +63,7 @@ const About = () => {
                     <div className="text-center h-full flex flex-col items-center md:pt-20 md:mx-[2px]">
                         <div className="max-w-md flex-1 flex flex-col md:px-10 lg:px-1/12 xl:px-2/12">
                             <motion.h1
-                                className="mt-4 text-4xl text-gold font-bold"
+                                className="mt-4 text-4xl font-bold"
                                 initial={{ y: -20, opacity: 0 }}
                                 whileInView={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.6, duration: 0.5 }}
@@ -71,7 +71,7 @@ const About = () => {
                                 Direct Giving: Cutting Out the Middlemen
                             </motion.h1>
                             <motion.p
-                                className="mt-4 text-cgold font-bold"
+                                className="mt-4 font-bold"
                                 initial={{ y: -20, opacity: 0 }}
                                 whileInView={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.8, duration: 0.5 }}
@@ -84,11 +84,11 @@ const About = () => {
                                 around the world.
                             </motion.p>
                         </div>
-                        <div className="w-full border-b border-solid border-gold h-20 border-0 md:border-b"></div>
+                        <div className="w-full border-b border-solid border-purple h-20 border-0 md:border-b"></div>
                     </div>
                 </motion.div>
                 <motion.div
-                    className="md:border-0 md:odd:border-r md:border-solid md:border-gold overflow-hidden"
+                    className="md:border-0 md:odd:border-r md:border-solid md:border-purple overflow-hidden"
                     initial={{ x: -50, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.4, duration: 0.5 }}
@@ -96,7 +96,7 @@ const About = () => {
                     <div className="text-center h-full flex flex-col items-center md:pt-20 md:mx-[2px]">
                         <div className="max-w-md flex-1 flex flex-col md:px-10 lg:px-1/12 xl:px-2/12">
                             <motion.h1
-                                className="mt-4 text-4xl text-gold font-bold"
+                                className="mt-4 text-4xl font-bold"
                                 initial={{ y: -20, opacity: 0 }}
                                 whileInView={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.6, duration: 0.5 }}
@@ -104,7 +104,7 @@ const About = () => {
                                 Empowering Communities Worldwide
                             </motion.h1>
                             <motion.p
-                                className="mt-4 text-cgold font-bold"
+                                className="mt-4 font-bold"
                                 initial={{ y: -20, opacity: 0 }}
                                 whileInView={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.8, duration: 0.5 }}
@@ -117,11 +117,11 @@ const About = () => {
                                 giving and solidarity.
                             </motion.p>
                         </div>
-                        <div className="w-full border-0 border-solid border-gold h-20 border-b md:border-0"></div>
+                        <div className="w-full border-0 border-solid border-purple h-20 border-b md:border-0"></div>
                     </div>
                 </motion.div>
                 <motion.div
-                    className="md:border-0 md:odd:border-r md:border-solid md:border-gold overflow-hidden"
+                    className="md:border-0 md:odd:border-r md:border-solid md:border-purple overflow-hidden"
                     initial={{ x: 50, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.4, duration: 0.5 }}
@@ -129,7 +129,7 @@ const About = () => {
                     <div className="text-center h-full flex flex-col items-center md:pt-20 md:mx-[2px]">
                         <div className="max-w-md flex-1 flex flex-col md:px-10 lg:px-1/12 xl:px-2/12">
                             <motion.h1
-                                className="mt-4 text-4xl text-gold font-bold"
+                                className="mt-4 text-4xl font-bold"
                                 initial={{ y: -20, opacity: 0 }}
                                 whileInView={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.6, duration: 0.5 }}
@@ -137,7 +137,7 @@ const About = () => {
                                 Technology-Driven Efficiency
                             </motion.h1>
                             <motion.p
-                                className="mt-4 text-cgold font-bold"
+                                className="mt-4 font-bold"
                                 initial={{ y: -20, opacity: 0 }}
                                 whileInView={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.8, duration: 0.5 }}
@@ -151,7 +151,7 @@ const About = () => {
                                 scale.
                             </motion.p>
                         </div>
-                        <div className="w-full border-0 border-solid border-gold h-20 border-b md:border-0"></div>
+                        <div className="w-full border-0 border-solid border-purple h-20 border-b md:border-0"></div>
                     </div>
                 </motion.div>
             </div>

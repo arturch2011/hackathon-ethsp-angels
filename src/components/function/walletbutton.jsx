@@ -47,7 +47,7 @@ const WalletButton = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             id="walletButton"
-            className="bg-dgold hover:bg-gold font-bold py-2 px-4 rounded-lg"
+            className="bg-cblue hover:bg-gold font-bold py-2 px-4 rounded-lg"
         >
             Connect
         </motion.button>

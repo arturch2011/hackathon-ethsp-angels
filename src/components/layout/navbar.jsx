@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import WalletButton from '../function/walletbutton';
+import Image from 'next/image';
+import logo from '../../../public/logo.png';
 
 const Navbar = () => {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -70,28 +72,31 @@ const Navbar = () => {
             <div className="max-w-7xl w-full px-4 sm:px-6 lg:px-8 bg-gray-700 md:bg-gray-700/25 md:backdrop-blur-xl md:rounded-full md:mx-4">
                 <div className="flex items-center justify-between h-16">
                     <div className="w-full flex items-center justify-between">
-                        <div className="flex-shrink-0">GOalGame</div>
+                        <Link href="/" className="flex-shrink-0 flex items-center">
+                            <Image src={logo} alt="logo" className="max-h-16 w-auto mr-2" />
+                            <div>GOalGame</div>
+                        </Link>
                         <div className="hidden md:block">
                             <div className="ml-10 flex items-baseline space-x-4">
-                                <Link href="/" className="hover:bg-gray-700 px-3 py-2 rounded-md ">
+                                <Link href="/" className="hover:bg-white px-3 py-2 rounded-md ">
                                     Início
                                 </Link>
                                 <div
                                     onClick={() => handleDropClick('drop1')}
-                                    className="hover:bg-gray-700 px-3 py-2 flex flex-row justify-center rounded-md"
+                                    className="hover:bg-white px-3 py-2 flex flex-row justify-center rounded-md"
                                 >
                                     Participar
                                     {showDrop.drop1 && (
                                         <div className="absolute flex flex-col items-center rounded-lg mt-12 p-4 bg-slate-700/50 backdrop-blur-xl">
                                             <Link
                                                 href="/games"
-                                                className="p-2 hover:bg-gray-700 w-full rounded-lg text-center"
+                                                className="p-2 hover:bg-white w-full rounded-lg text-center"
                                             >
                                                 GoalGames
                                             </Link>
                                             <Link
                                                 href="/campaigns"
-                                                className="p-2 hover:bg-gray-700 w-full rounded-lg text-center"
+                                                className="p-2 hover:bg-white w-full rounded-lg text-center"
                                             >
                                                 Campanhas
                                             </Link>
@@ -100,27 +105,27 @@ const Navbar = () => {
                                 </div>
                                 <div
                                     onClick={() => handleDropClick('drop2')}
-                                    className="hover:bg-gray-700 px-3 py-2 flex flex-row justify-center rounded-md"
+                                    className="hover:bg-white px-3 py-2 flex flex-row justify-center rounded-md"
                                 >
                                     Criar
                                     {showDrop.drop2 && (
                                         <div className="absolute flex flex-col items-center rounded-lg mt-12 p-4 bg-slate-700/50 backdrop-blur-xl">
                                             <Link
                                                 href="/createc"
-                                                className="p-2 hover:bg-gray-700 w-full rounded-lg text-center"
+                                                className="p-2 hover:bg-white w-full rounded-lg text-center"
                                             >
                                                 Criar Campanha
                                             </Link>
                                             <Link
                                                 href="/createm"
-                                                className="p-2 hover:bg-gray-700 w-full rounded-lg text-center"
+                                                className="p-2 hover:bg-white w-full rounded-lg text-center"
                                             >
                                                 Criar GoalGame
                                             </Link>
                                         </div>
                                     )}
                                 </div>
-                                <Link href="/benefits" className="hover:bg-gray-700 px-3 py-2 rounded-md">
+                                <Link href="/benefits" className="hover:bg-white px-3 py-2 rounded-md">
                                     Beneficios
                                 </Link>
                                 <WalletButton />
