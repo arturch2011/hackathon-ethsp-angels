@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
 const HeroSection = () => {
     return (
@@ -11,13 +11,14 @@ const HeroSection = () => {
                 transition={{ duration: 1 }}
                 className="flex flex-col items-center justify-center max-w-7xl"
             >
-                <h1 className="text-7xl md:text-9xl font-bold mb-4 text-center text-gold">Angels</h1>
-                <p className="text-4xl md:text-6xl font-bold mb-8 text-center text-cgold">
-                    Unleashing a New Way to Make a Difference!
+                <h1 className="text-4xl md:text-6xl font-bold mb-4">GOal Gamers, Sejam Bem Vindos!</h1>
+                <p className="text-2xl md:text-6xl font-bold">
+                    Somos uma plataforma gamificada para criação e participação em projetos de vida através de
+                    incentivos gerados pela gamificação e tokenização, estimulando doações após a conclusão do projeto.
                 </p>
             </motion.div>
         </section>
-    )
-}
+    );
+};
 
-export default HeroSection
+export default HeroSection;

@@ -16,7 +16,7 @@ module.exports = {
             colors: {
                 cgold: '#EDD290',
                 dgold: '#D4AF37',
-                blue: '#89CFF0',
+                blue: '#f1f1f1',
                 cblue: '#B8E2F2',
                 gold: '#EDC967',
                 purple: '#C026D3',
