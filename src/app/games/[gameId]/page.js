@@ -36,6 +36,7 @@ const GameID = ({ params }) => {
             const start = await dailyImprovementsInstance.methods.inicio().call();
             const end = await dailyImprovementsInstance.methods.fim().call();
             const category = await dailyImprovementsInstance.methods.category().call();
+            const validator = await dailyImprovementsInstance.methods.validator().call();
 
             const gameProps = {
                 addr,
@@ -52,6 +53,7 @@ const GameID = ({ params }) => {
                 end,
                 category,
                 callerAddr,
+                validator,
             };
             console.log(gameProps);
 
@@ -111,6 +113,7 @@ const GameID = ({ params }) => {
                         <p>End Date: {gameProps.end + ''}</p>
                         <p>Category: {gameProps.category + ''}</p>
                         <p>Caller Addr: {gameProps.callerAddr + ''}</p>
+                        <p>Validator: {gameProps.validator + ''}</p>
                     </div>
 
                     <button className="bg-dgold text-white py-2 px-6 rounded-lg shadow-lg">Participate</button>
