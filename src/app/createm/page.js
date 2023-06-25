@@ -50,36 +50,36 @@ const Create = () => {
                         variants={itemVariants}
                         className="text-4xl md:text-6xl font-bold mb-8 text-center text-purple"
                     >
-                        Create a GoalGame
+                        Criar GoalGame
                     </motion.h2>
                     <motion.div variants={itemVariants} className="bg-dgold rounded-md p-8 shadow-md">
                         <div className="mb-6">
                             <label htmlFor="name" className="block text-xl font-medium mb-2">
-                                Name
+                                Nome
                             </label>
                             <input
                                 type="text"
                                 id="name"
-                                placeholder="GoalGame Name"
+                                placeholder="Nome do GoalGame"
                                 className="w-full border-gray-300 rounded-md p-3 text-black placeholder:italic"
                                 onChange={(e) => setName(e.target.value)}
                             />
                         </div>
                         <div className="mb-6">
                             <label htmlFor="goal" className="block text-xl font-medium mb-2">
-                                Goal
+                                Objetivo
                             </label>
                             <input
                                 type="goal"
                                 id="goal"
-                                placeholder="Main objective of the GoalGame"
+                                placeholder="Objetivo principal do GoalGame"
                                 className="w-full border-gray-300 rounded-md p-3 text-black placeholder:italic"
                                 onChange={(e) => setGoal(e.target.value)}
                             />
                         </div>
                         <div className="mb-6">
                             <label htmlFor="start" className="block text-xl font-medium mb-2">
-                                Start Date
+                                Data de Inicio
                             </label>
                             <input
                                 type="start"
@@ -91,7 +91,7 @@ const Create = () => {
                         </div>
                         <div className="mb-6">
                             <label htmlFor="end" className="block text-xl font-medium mb-2">
-                                End Date
+                                Data de finalização
                             </label>
                             <input
                                 type="end"
@@ -103,7 +103,7 @@ const Create = () => {
                         </div>
                         <div className="mb-6">
                             <label htmlFor="category" className="block text-xl font-medium mb-2">
-                                Donate ODS Category
+                                Categoria ODS
                             </label>
                             <select
                                 type="category"
@@ -111,20 +111,20 @@ const Create = () => {
                                 className="w-full border-gray-300 rounded-md p-3 text-black"
                                 onChange={(e) => setCategory(e.target.value)}
                             >
-                                <option value="">Select a ODS category</option>
-                                <option value="Health and Well-being">Health and Well-being</option>
-                                <option value="Education and Quality">Education and Quality</option>
-                                <option value="Industry, Innovation, and Infrastructure">
-                                    Industry, Innovation, and Infrastructure
+                                <option value="">Escolha a categoria ODS</option>
+                                <option value="Saude e Bem-Estar">Saude e Bem-Estar</option>
+                                <option value="Educação e Qualidade">Educação e Qualidade</option>
+                                <option value="Industria, Inovação e Infraestrutura">
+                                    Industria, Inovação e Infraestrutura
                                 </option>
-                                <option value="Peace, Justice, and Effective Institutions">
-                                    Peace, Justice, and Effective Institutions
+                                <option value="Paz, Justiça e Instituições Eficazes">
+                                    Paz, Justiça e Instituições Eficazes
                                 </option>
                             </select>
                         </div>
                         <div className="mb-6">
                             <label htmlFor="validator" className="block text-xl font-medium mb-2">
-                                ONG Address
+                                Endereço da ONG
                             </label>
                             <input
                                 type="validator"
@@ -137,11 +137,11 @@ const Create = () => {
 
                         <div className="mb-6">
                             <label htmlFor="description" className="block text-xl font-medium mb-2">
-                                Description
+                                Descrição
                             </label>
                             <textarea
                                 id="description"
-                                placeholder="GoalGame Description"
+                                placeholder="Descrição do GoalGame"
                                 rows={5}
                                 className="w-full border-gray-300 rounded-md p-3 text-black placeholder:italic"
                                 onChange={(e) => setDescription(e.target.value)}
@@ -154,7 +154,7 @@ const Create = () => {
                             whileTap={{ scale: 0.95 }}
                             onClick={createCampaignHanddler}
                         >
-                            Create
+                            Criar
                         </motion.button>
                     </motion.div>
                 </motion.div>

@@ -24,7 +24,7 @@ const Join = () => {
                         transition={{ delay: 0.4, duration: 0.5 }}
                     >
                         <p className="tw-lead text-5xl md:text-6xl md:tw-title-sm mb-10 text-center font-bold">
-                            Become a part of the community and get rewards.
+                        Faça parte da comunidade e receba recompensas.
                         </p>
                         <motion.button
                             className="w-2/3 h-14 mt-4 py-1 px-3 font-bold bg-gray-800/50 rounded-lg hover:bg-gray-800 active:bg-gray-800/50"
@@ -32,7 +32,7 @@ const Join = () => {
                             whileInView={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.6, duration: 0.5 }}
                         >
-                            JOIN
+                            PARTICIPE
                         </motion.button>
                     </motion.div>
                     <motion.div

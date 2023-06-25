@@ -38,7 +38,7 @@ const Expandable = () => {
         <section className="w-full mb-60 text-purple">
             <div className="w-full mx-auto text-center max-w-screen-2xl my-16 md:pt-20">
                 <h2 className="text-6xl font-bold">
-                    Level Up Generosity: Gamifying Donations with Special NFTs and Benefits
+                    Aumentando a Generosidade: Transformando as Doações em um Jogo com NFTs Especiais e Benefícios
                 </h2>
             </div>
 
@@ -52,7 +52,7 @@ const Expandable = () => {
                         whileInView={{ opacity: 1 }}
                         transition={{ delay: 0.2, duration: 0.5 }}
                     >
-                        <h3 className="text-4xl font-bold mb-0">Exclusive NFTs: Rewards for Generosity</h3>
+                        <h3 className="text-4xl font-bold mb-0">NFTs Exclusivos: Recompensas para Generosidade</h3>
                         <motion.svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="36"
@@ -83,14 +83,10 @@ const Expandable = () => {
                             <div className="flex flex-col md:flex-row">
                                 <div className="flex-1 pt-5 md:pt-20 order-2 md:order-1 flex flex-col justify-center">
                                     <p className="tw-lead text-2xl md:tw-title-sm mb-10 text-camber font-bold">
-                                        Angels introduces a captivating gamification aspect to the donation experience
-                                        by integrating special Non-Fungible Tokens (NFTs). When users contribute to
-                                        campaigns, they earn unique and limited-edition NFTs as tokens of appreciation.
+                                    GOal Game introduz um aspecto envolvente de gamificação na experiência de doação ao integrar tokens não fungíveis (NFTs) especiais. Quando os usuários contribuem para campanhas, eles ganham NFTs exclusivos e de edição limitada como símbolos de apreço.
                                     </p>
                                     <p className="tw-lead text-xl font-bold md:tw-title-sm mb-10">
-                                        These NFTs represent their generosity and serve as a testament to their support
-                                        for meaningful causes. By unlocking exclusive NFTs, donors not only contribute
-                                        to positive change but also gain digital collectibles with intrinsic value.
+                                    Esses NFTs representam sua generosidade e servem como testemunho de seu apoio a causas significativas. Ao desbloquear NFTs exclusivos, os doadores não apenas contribuem para uma mudança positiva, mas também obtêm colecionáveis digitais com valor intrínseco.
                                     </p>
                                 </div>
                                 <div className="flex-1 order-1 md:order-2 mt-10 md:mt-0 aspect-[821/750]">
@@ -112,7 +108,7 @@ const Expandable = () => {
                         whileInView={{ opacity: 1 }}
                         transition={{ delay: 0.4, duration: 0.5 }}
                     >
-                        <h3 className="text-4xl font-bold mb-0">NFT Benefits: Unlocking Unique Privileges</h3>
+                        <h3 className="text-4xl font-bold mb-0">Benefícios dos NFTs: Desbloqueando Privilégios Únicos</h3>
                         <motion.svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="36"
@@ -143,14 +139,10 @@ const Expandable = () => {
                             <div className="flex flex-col md:flex-row">
                                 <div className="flex-1 pt-5 md:pt-20 order-2 md:order-1 flex flex-col justify-center">
                                     <p className="tw-lead text-2xl md:tw-title-sm mb-10 text-camber font-bold">
-                                        Angels NFTs go beyond being mere collectibles—they offer tangible benefits to
-                                        their holders. These special NFTs grant access to exclusive events, early
-                                        campaign previews, or even discounts on partner products and services.
+                                    Os NFTs do GOal Game vão além de serem meros itens de colecionador - eles oferecem benefícios tangíveis aos seus detentores. Esses NFTs especiais concedem acesso a eventos exclusivos, prévias antecipadas de campanhas ou até mesmo descontos em produtos e serviços de parceiros.
                                     </p>
                                     <p className="tw-lead text-xl font-bold md:tw-title-sm mb-10">
-                                        By owning these NFTs, donors become part of an exclusive community that enjoys
-                                        unique privileges and experiences, adding an extra layer of excitement and
-                                        incentives to the act of giving.
+                                    Ao possuir esses NFTs, os doadores se tornam parte de uma comunidade exclusiva que desfruta de privilégios e experiências únicas, adicionando uma camada extra de emoção e incentivos ao ato de doar.
                                     </p>
                                 </div>
                                 <div className="flex-1 order-1 md:order-2 mt-10 md:mt-0 aspect-[821/750]">
@@ -172,7 +164,7 @@ const Expandable = () => {
                         whileInView={{ opacity: 1 }}
                         transition={{ delay: 0.6, duration: 0.5 }}
                     >
-                        <h3 className="text-4xl font-bold mb-0">Impact Showcase: Personalized NFT Profiles</h3>
+                        <h3 className="text-4xl font-bold mb-0">Exibição de Impacto: Perfis Personalizados de NFT</h3>
                         <motion.svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="36"
@@ -203,15 +195,10 @@ const Expandable = () => {
                             <div className="flex flex-col md:flex-row">
                                 <div className="flex-1 pt-5 md:pt-20 order-2 md:order-1 flex flex-col justify-center">
                                     <p className="tw-lead text-2xl md:tw-title-sm mb-10 text-camber font-bold">
-                                        Angels leverages NFT technology to create personalized profiles for donors. Each
-                                        profile showcases the impact an individual or organization has made through
-                                        their donations.
+                                    O GOal Game utiliza a tecnologia de NFT para criar perfis personalizados para os doadores. Cada perfil mostra o impacto que um indivíduo ou organização teve por meio de suas doações.
                                     </p>
                                     <p className="tw-lead text-xl font-bold md:tw-title-sm mb-10">
-                                        These profiles feature NFT badges, representing the campaigns supported, funds
-                                        donated, and the resulting positive outcomes. By displaying their NFT profiles,
-                                        donors can inspire others, fostering a sense of pride, and encouraging further
-                                        engagement in the platform.
+                                    Esses perfis apresentam distintivos de NFT, representando as campanhas apoiadas, os fundos doados e os resultados positivos alcançados. Ao exibir seus perfis de NFT, os doadores podem inspirar outras pessoas, promovendo um senso de orgulho e incentivando maior envolvimento na plataforma.
                                     </p>
                                 </div>
                                 <div className="flex-1 order-1 md:order-2 mt-10 md:mt-0 aspect-[821/750]">
@@ -232,7 +219,7 @@ const Expandable = () => {
                         whileInView={{ opacity: 1 }}
                         transition={{ delay: 0.6, duration: 0.5 }}
                     >
-                        <h3 className="text-4xl font-bold mb-0">Collective Success: NFT Leaderboards</h3>
+                        <h3 className="text-4xl font-bold mb-0">Sucesso Coletivo: Classificações de NFT</h3>
                         <motion.svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="36"
@@ -263,16 +250,10 @@ const Expandable = () => {
                             <div className="flex flex-col md:flex-row">
                                 <div className="flex-1 pt-5 md:pt-20 order-2 md:order-1 flex flex-col justify-center">
                                     <p className="tw-lead text-2xl md:tw-title-sm mb-10 text-camber font-bold">
-                                        Angels introduces NFT leaderboards, which display the most active and impactful
-                                        donors within the community. These leaderboards rank individuals and
-                                        organizations based on their cumulative contributions, fostering healthy
-                                        competition and a sense of collective achievement.
+                                    O GOal Game apresenta classificações de NFT, que exibem os doadores mais ativos e impactantes dentro da comunidade. Essas classificações classificam indivíduos e organizações com base em suas contribuições acumulativas, promovendo uma competição saudável e um senso de conquista coletiva..
                                     </p>
                                     <p className="tw-lead text-xl font-bold md:tw-title-sm mb-10">
-                                        Donors strive to climb the ranks, earn special NFT badges, and gain recognition
-                                        for their philanthropic efforts. The NFT leaderboards not only create an
-                                        engaging and interactive environment but also encourage increased participation
-                                        and generosity.
+                                    Os doadores se esforçam para subir nas classificações, ganhar distintivos especiais de NFT e obter reconhecimento por seus esforços filantrópicos. As classificações de NFT não apenas criam um ambiente envolvente e interativo, mas também incentivam maior participação e generosidade.
                                     </p>
                                 </div>
                                 <div className="flex-1 order-1 md:order-2 mt-10 md:mt-0 aspect-[821/750]">

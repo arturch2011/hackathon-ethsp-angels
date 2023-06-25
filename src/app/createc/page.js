@@ -46,64 +46,64 @@ const Create = () => {
                         variants={itemVariants}
                         className="text-4xl md:text-6xl font-bold mb-8 text-center text-purple-600"
                     >
-                        Create a Campaign
+                        Criar Campanha
                     </motion.h2>
                     <motion.div variants={itemVariants} className="bg-dgold rounded-md p-8 shadow-md">
                         <div className="mb-6">
                             <label htmlFor="name" className="block text-xl font-medium mb-2">
-                                Name
+                                Nome
                             </label>
                             <input
                                 type="text"
                                 id="name"
-                                placeholder="Campaign Name"
+                                placeholder="Nome da Campanha"
                                 className="w-full border-gray-300 rounded-md p-3 text-black placeholder:italic"
                                 onChange={(e) => setName(e.target.value)}
                             />
                         </div>
                         <div className="mb-6">
                             <label htmlFor="goal" className="block text-xl font-medium mb-2">
-                                Goal
+                                Objetivo
                             </label>
                             <input
                                 type="goal"
                                 id="goal"
-                                placeholder="Amount To Be Collected"
+                                placeholder="Quantidade a ser arrecadada"
                                 className="w-full border-gray-300 rounded-md p-3 text-black placeholder:italic"
                                 onChange={(e) => setGoal(e.target.value)}
                             />
                         </div>
                         <div className="mb-6">
                             <label htmlFor="deadline" className="block text-xl font-medium mb-2">
-                                Deadline
+                                Data Limite
                             </label>
                             <input
                                 type="deadline"
                                 id="deadline"
-                                placeholder="Days"
+                                placeholder="Data Limite"
                                 className="w-full border-gray-300 rounded-md p-3 text-black placeholder:italic"
                                 onChange={(e) => setDeadline(e.target.value)}
                             />
                         </div>
                         <div className="mb-6">
                             <label htmlFor="minimum" className="block text-xl font-medium mb-2">
-                                Minimum Contribution
+                                Contribuição Mínima
                             </label>
                             <input
                                 type="minimum"
                                 id="minimum"
-                                placeholder="Minimum Donation Amount"
+                                placeholder="Doação Mínima"
                                 className="w-full border-gray-300 rounded-md p-3 text-black placeholder:italic"
                                 onChange={(e) => setMinimum(e.target.value)}
                             />
                         </div>
                         <div className="mb-6">
                             <label htmlFor="description" className="block text-xl font-medium mb-2">
-                                Description
+                                Descrição
                             </label>
                             <textarea
                                 id="description"
-                                placeholder="Campaign Description"
+                                placeholder="Descrição da campanha"
                                 rows={5}
                                 className="w-full border-gray-300 rounded-md p-3 text-black placeholder:italic"
                                 onChange={(e) => setDescription(e.target.value)}
@@ -116,7 +116,7 @@ const Create = () => {
                             whileTap={{ scale: 0.95 }}
                             onClick={createCampaignHanddler}
                         >
-                            Create
+                            Criar
                         </motion.button>
                     </motion.div>
                 </motion.div>

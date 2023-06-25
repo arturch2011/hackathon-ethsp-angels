@@ -35,7 +35,7 @@ const About = () => {
                                 whileInView={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.6, duration: 0.5 }}
                             >
-                                Blockchain: The Foundation of Trust in Giving
+                                1. O que é GoalGame?
                             </motion.h1>
                             <motion.p
                                 className="mt-4 font-bold"
@@ -43,12 +43,14 @@ const About = () => {
                                 whileInView={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.8, duration: 0.5 }}
                             >
-                                By leveraging blockchain technology, Angels ensures transparency and accountability in
-                                every step of the donation process. Through its decentralized and immutable nature,
-                                blockchain creates a permanent record of transactions, enabling donors to track their
-                                contributions and verify their impact. This transparency fosters trust among donors and
-                                recipients, encouraging widespread participation in campaigns and increasing the overall
-                                effectiveness of the platform.
+                                É um jogo emocionante baseado em blockchain que combina
+                                as metas pessoais, incentivos financeiros e impacto social.
+                                Nesta plataforma inovadora, os usuários são convidados
+                                a depositar dinheiro e se desafiar a atingir
+                                seus objetivos dentro de um prazo determinado. 
+                                O jogo aproveita o poder da tecnologia blockchain para garantir
+                                transparência, segurança e justiça em todas as transações.
+
                             </motion.p>
                         </div>
                         <div className="w-full border-b border-solid border-purple h-20 border-0 md:border-b"></div>
@@ -68,7 +70,8 @@ const About = () => {
                                 whileInView={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.6, duration: 0.5 }}
                             >
-                                Direct Giving: Cutting Out the Middlemen
+                                2. Campanhas de caridade e impacto social
+
                             </motion.h1>
                             <motion.p
                                 className="mt-4 font-bold"
@@ -76,12 +79,7 @@ const About = () => {
                                 whileInView={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.8, duration: 0.5 }}
                             >
-                                With Angels, traditional intermediaries and their associated fees become a thing of the
-                                past. By utilizing smart contracts on the blockchain, the platform connects donors
-                                directly with recipients, enabling faster and more efficient transfers of funds. This
-                                direct giving approach eliminates unnecessary costs and ensures that a higher proportion
-                                of donations reach those in need, making a tangible and immediate impact on communities
-                                around the world.
+                                Caso o jogador não consiga atingir seus objetivos, o dinheiro depositado será direcionado para campanhas beneficentes geradas no site GoalGame, também na blockchain. Essas campanhas serão criteriosamente selecionadas, com foco em causas sociais relevantes e impactantes. Dessa forma, o dinheiro que não foi resgatado pelos jogadores será convertido em recursos valiosos para ajudar quem precisa.
                             </motion.p>
                         </div>
                         <div className="w-full border-b border-solid border-purple h-20 border-0 md:border-b"></div>
@@ -101,7 +99,7 @@ const About = () => {
                                 whileInView={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.6, duration: 0.5 }}
                             >
-                                Empowering Communities Worldwide
+                                3. Recompensas financeiras para o seu sucesso
                             </motion.h1>
                             <motion.p
                                 className="mt-4 font-bold"
@@ -109,12 +107,8 @@ const About = () => {
                                 whileInView={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.8, duration: 0.5 }}
                             >
-                                Angels leverages the global nature of blockchain technology to connect people from all
-                                corners of the world. The platform transcends geographical boundaries, allowing
-                                individuals, organizations, and communities from any country to create and participate
-                                in campaigns. This inclusivity not only expands the donor pool but also enables targeted
-                                assistance to regions facing specific challenges, fostering a truly global movement of
-                                giving and solidarity.
+                                Por outro lado, se o jogador atingir seus objetivos com sucesso dentro do prazo estabelecido, terá direito a receber uma parte do dinheiro depositado pelos jogadores que não conseguiram cumprir seus objetivos. Esta recompensa financeira serve como um incentivo adicional para motivar e encorajar os jogadores a darem o seu melhor para atingirem os seus objetivos. A distribuição dos ganhos será justa e transparente, levando em consideração o desempenho individual de cada jogador.
+
                             </motion.p>
                         </div>
                         <div className="w-full border-0 border-solid border-purple h-20 border-b md:border-0"></div>
@@ -134,7 +128,7 @@ const About = () => {
                                 whileInView={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.6, duration: 0.5 }}
                             >
-                                Technology-Driven Efficiency
+                                4. Amei o Projeto, mas ao final BlockChain é confiável?
                             </motion.h1>
                             <motion.p
                                 className="mt-4 font-bold"
@@ -142,13 +136,7 @@ const About = () => {
                                 whileInView={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.8, duration: 0.5 }}
                             >
-                                Angels harnesses the power of advanced technology to streamline the donation process. By
-                                utilizing blockchains decentralized infrastructure, the platform achieves enhanced
-                                efficiency, reducing overhead costs and minimizing administrative burdens. Additionally,
-                                the scalability of blockchain allows Angels to handle a high volume of transactions,
-                                ensuring that campaigns can rapidly scale and respond to urgent needs. This
-                                technology-driven efficiency enables Angels to make a significant impact on a global
-                                scale.
+                                Blockchain é uma tecnologia que agrupa um conjunto de informações imutável que se conectam por meio de criptografia garantindo total segurança e a transparência. 
                             </motion.p>
                         </div>
                         <div className="w-full border-0 border-solid border-purple h-20 border-b md:border-0"></div>

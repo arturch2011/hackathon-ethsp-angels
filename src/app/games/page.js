@@ -35,6 +35,9 @@ const Page = () => {
         // const participants = await dailyImprovementsInstance.methods.participants().call();
         //const validators = await dailyImprovementsInstance.methods.validators().call();
         const isClosed = await dailyImprovementsInstance.methods.isClosed().call();
+        const start = await dailyImprovementsInstance.methods.inicio().call();
+        const end = await dailyImprovementsInstance.methods.fim().call();
+        const category = await dailyImprovementsInstance.methods.category().call();
 
         return {
             addr,
@@ -42,9 +45,10 @@ const Page = () => {
             goal,
             description,
             creator,
-            // participants,
-            // validators,
             isClosed,
+            start,
+            end,
+            category,
         };
     };
 
@@ -71,7 +75,7 @@ const Page = () => {
                                 aria-expanded="false"
                                 aria-haspopup="true"
                             >
-                                Filter
+                                Filtro
                                 <svg
                                     className="-mr-1 ml-2 h-5 w-5"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +106,7 @@ const Page = () => {
                         <div className="relative flex items-center">
                             <input
                                 className="pl-4 pr-12 py-2 rounded-full bg-white/25 focus:border-dgold focus:border-2 focus:outline-none"
-                                placeholder="Search"
+                                placeholder="Pesquisar"
                             />
                             <button className="absolute right-0 top-0 h-full p-2 rounded-r-full bg-dgold text-dblue hover:bg-amber/50 hover:text-amber active:bg-amber active:text-dblue">
                                 <svg
@@ -124,7 +128,7 @@ const Page = () => {
 
                     <div className="py-4 text-amber">
                         <div className="flex justify-center py-6 text-6xl font-bold text-center text-purple">
-                            Daily Improvements
+                            GOal Games
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                             {dailyImprovements.map((improvements, index) => (
@@ -132,9 +136,11 @@ const Page = () => {
                                     <Link href={`/games/${improvements.addr}`}>
                                         <div className="h-full p-3 bg-dgold rounded-xl flex flex-col overflow-hidden">
                                             <h1 className='font-bold text-4xl mb-4"'>{improvements.name}</h1>
-                                            <p className='text-xl mb-4"'>Period: date1 - date2</p>
+                                            <p className='text-xl mb-4"'>
+                                                Período: {improvements.start + ''} - {improvements.end + ''}
+                                            </p>
                                             <p className='font-bold text-2xl mb-4"'>{improvements.goal}</p>
-                                            <p className='font-bold text-2xl mb-4"'>category</p>
+                                            <p className='font-bold text-2xl mb-4"'>{improvements.category}</p>
                                         </div>
                                     </Link>
                                 </div>
