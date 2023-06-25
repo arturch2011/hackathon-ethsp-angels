@@ -60,6 +60,7 @@ contract DailyImprovements {
     uint public inicio;
     uint public fim;
     string public category;
+    uint public totalValue;
     mapping(address => bool) public prizeDonation;
     mapping(address => bool) public fullDonation;
 
@@ -100,6 +101,7 @@ contract DailyImprovements {
         fullDonation[msg.sender] = _fullDonation;
         contributions[msg.sender] += _value;
         participants.push(payable(msg.sender));
+        totalValue += _value;
     }
 
     function validate(address _participant) public restrictedValidador {
